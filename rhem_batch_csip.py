@@ -188,21 +188,6 @@ def openAndRunRHEMScenarios():
         # run the RHEM CSIP Service
         rhem_response = runRHEMCSIPService(request_data, row_index)
         row_index = row_index + 1
-####
-# Open a RHEM scenario from the workbook and submit run job tgu
-def openAndRunRHEMScenarios2():
-    first_sheet = RHEM_WORKBOOK.sheet_by_index(0)
-    
-    for row_index in range(1,2):
-        cells = first_sheet.row_slice(rowx=row_index,  start_colx=0, end_colx=20)
-        
-        print("Running scenario: " + cells[2].value)
-        
-        # crete the input file/request to run the curren scenario
-        request_data = createInputFile(cells[0].value, cells[1].value,  cells[2].value, cells[3].value, cells[4].value, cells[5].value, cells[6].value, cells[7].value, cells[8].value, cells[9].value, cells[10].value, cells[11].value, cells[12].value, cells[13].value, cells[14].value, cells[15].value, cells[16].value, cells[17].value, cells[18].value,cells[19].value)
-        # run the RHEM CSIP Service
-        rhem_response = runRHEMCSIPService(request_data)
-        
 
 ####
 # Run the CSIP RHEM service based on single scenario inputs
@@ -236,7 +221,6 @@ def saveScenarioSummaryResults(rhem_run_response):
     with open(rhem_run_response["result"][18]["name"], 'wb') as file:
         file.write(str(rhem_summary_result.text).encode())
 
-
 ####
 # Save the simulation summary results to the Excel sheet
 def saveScenarioSummaryResultsToExcel(rhem_run_response,row_index):
@@ -254,15 +238,8 @@ def saveScenarioSummaryResultsToExcel(rhem_run_response,row_index):
             elif index == 6:
                 ws.cell(row=row_index + 1, column=25).value = str(line).split("=")[1].strip()
             index = index + 1
-            #print("TEST")
-        #file.write(str(rhem_summary_result.text).encode())
     
     RHEM_WORKBOOK.save("RHEM_template.xlsx")
-    #with open(summary_file, 'rb') as file:
-    #    summary_file_lines = file.readlines()
-        #for line in summary_file_lines:
-        #    print(line)
-        #file.write(str(rhem_summary_result.text).encode())
 
 ####
 # The main function

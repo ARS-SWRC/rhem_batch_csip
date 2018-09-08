@@ -1,0 +1,794 @@
+{
+    "metainfo": {
+        "status": "Finished",
+        "suid": "991cf7e9-9c5e-11e6-8b2b-e15799e481d5",
+        "cloud_node": "172.1.6.38",
+        "tstamp": "2016-10-27 10:01:19",
+        "service_url": "http://csip.engr.colostate.edu:8092/csip-rhem/m/rhem/getrhemsoilcomponent/1.0",
+        "request_ip": "129.82.23.212",
+        "csip.version": "$version: 2.1.129 a5c9bcc941fc 2016-10-20 Kyle Traff <kyle.traff@colostate.edu>, built at 2016-10-26 14:55 by jenkins$",
+        "cpu_time": 322,
+        "expiration_date": "2016-10-27 10:06:19"
+    },
+    "parameter": [
+        {
+            "name": "AoAID",
+            "value": 1,
+            "Description": "Area of Analysis Identifier"
+        },
+        {
+            "name": "rhem_site_id",
+            "value": 64531,
+            "Description": "RHEM Evaluation Site Identifier"
+        },
+        {
+            "name": "rhem_site_geometry",
+            "type": "Point",
+            "coordinates": [
+                -98.002,
+                46.335
+            ],
+            "Description": "RHEM Evaluation Site Geometry"
+        }
+    ],
+    "result": [
+        {
+            "name": "AoAID",
+            "value": 1,
+            "description": "Area of Analysis Identifier"
+        },
+        {
+            "name": "rhem_site_id",
+            "value": 64531,
+            "description": "RHEM Evaluation Site Identifier"
+        },
+        {
+            "name": "mapunit_list",
+            "value": [
+                {
+                    "name": "mapunit",
+                    "value": [
+                        {
+                            "name": "musym",
+                            "value": "G143A",
+                            "description": "Mapunit Symbol"
+                        },
+                        {
+                            "name": "muname",
+                            "value": "Barnes-Svea loams, 0 to 3 percent slopes",
+                            "description": "Mapunit Name"
+                        },
+                        {
+                            "name": "component_list",
+                            "value": [
+                                {
+                                    "name": "component",
+                                    "value": [
+                                        {
+                                            "name": "cokey",
+                                            "value": "12573523",
+                                            "description": "Soil Component Key"
+                                        },
+                                        {
+                                            "name": "compname",
+                                            "value": "Barnes",
+                                            "description": "Soil Component Name"
+                                        },
+                                        {
+                                            "name": "comppct_r",
+                                            "value": 39,
+                                            "description": "Soil Component Percentage Relative Value"
+                                        },
+                                        {
+                                            "name": "slopepct_l",
+                                            "value": 0,
+                                            "description": "Slope Percent ñ Low Value"
+                                        },
+                                        {
+                                            "name": "slopepct_r",
+                                            "value": 2,
+                                            "description": "Slope Percent ñ Representative Value"
+                                        },
+                                        {
+                                            "name": "slopepct_h",
+                                            "value": 3,
+                                            "description": "Slope Percent ñ High Value"
+                                        },
+                                        {
+                                            "name": "ecological_site_list",
+                                            "value": [
+                                                {
+                                                    "name": "ecological_site",
+                                                    "value": [
+                                                        {
+                                                            "name": "es_id",
+                                                            "value": "R055BY064ND",
+                                                            "description": "Ecological Site Identifier"
+                                                        },
+                                                        {
+                                                            "name": "es_range_name",
+                                                            "value": "Loamy  ",
+                                                            "description": "Ecological Site Name"
+                                                        }
+                                                    ],
+                                                    "description": "Ecological Site"
+                                                }
+                                            ],
+                                            "description": "Ecological Site List"
+                                        },
+                                        {
+                                            "name": "surface_texture_class_list",
+                                            "value": [
+                                                {
+                                                    "name": "surface_texture_class",
+                                                    "value": [
+                                                        {
+                                                            "name": "texcl",
+                                                            "value": "Loam",
+                                                            "description": "SSURGO Texture Class"
+                                                        },
+                                                        {
+                                                            "name": "rhem_texture_id ",
+                                                            "value": 13,
+                                                            "description": "RHEM Texture Class Identifier"
+                                                        },
+                                                        {
+                                                            "name": "rhem_texture_class ",
+                                                            "value": "l",
+                                                            "description": "RHEM Texture Class"
+                                                        },
+                                                        {
+                                                            "name": "rhem_texture_class_label ",
+                                                            "value": "Loam",
+                                                            "description": "RHEM Texture Class Label"
+                                                        }
+                                                    ],
+                                                    "description": "Soil Component Surface Texture Class"
+                                                }
+                                            ],
+                                            "description": "Soil Component Surface Texture Class List"
+                                        }
+                                    ],
+                                    "description": "Component"
+                                },
+                                {
+                                    "name": "component",
+                                    "value": [
+                                        {
+                                            "name": "cokey",
+                                            "value": "12573525",
+                                            "description": "Soil Component Key"
+                                        },
+                                        {
+                                            "name": "compname",
+                                            "value": "Svea",
+                                            "description": "Soil Component Name"
+                                        },
+                                        {
+                                            "name": "comppct_r",
+                                            "value": 38,
+                                            "description": "Soil Component Percentage Relative Value"
+                                        },
+                                        {
+                                            "name": "slopepct_l",
+                                            "value": 0,
+                                            "description": "Slope Percent ñ Low Value"
+                                        },
+                                        {
+                                            "name": "slopepct_r",
+                                            "value": 1,
+                                            "description": "Slope Percent ñ Representative Value"
+                                        },
+                                        {
+                                            "name": "slopepct_h",
+                                            "value": 3,
+                                            "description": "Slope Percent ñ High Value"
+                                        },
+                                        {
+                                            "name": "ecological_site_list",
+                                            "value": [
+                                                {
+                                                    "name": "ecological_site",
+                                                    "value": [
+                                                        {
+                                                            "name": "es_id",
+                                                            "value": "R055BY059ND",
+                                                            "description": "Ecological Site Identifier"
+                                                        },
+                                                        {
+                                                            "name": "es_range_name",
+                                                            "value": "Loamy Overflow  ",
+                                                            "description": "Ecological Site Name"
+                                                        }
+                                                    ],
+                                                    "description": "Ecological Site"
+                                                }
+                                            ],
+                                            "description": "Ecological Site List"
+                                        },
+                                        {
+                                            "name": "surface_texture_class_list",
+                                            "value": [
+                                                {
+                                                    "name": "surface_texture_class",
+                                                    "value": [
+                                                        {
+                                                            "name": "texcl",
+                                                            "value": "Loam",
+                                                            "description": "SSURGO Texture Class"
+                                                        },
+                                                        {
+                                                            "name": "rhem_texture_id ",
+                                                            "value": 13,
+                                                            "description": "RHEM Texture Class Identifier"
+                                                        },
+                                                        {
+                                                            "name": "rhem_texture_class ",
+                                                            "value": "l",
+                                                            "description": "RHEM Texture Class"
+                                                        },
+                                                        {
+                                                            "name": "rhem_texture_class_label ",
+                                                            "value": "Loam",
+                                                            "description": "RHEM Texture Class Label"
+                                                        }
+                                                    ],
+                                                    "description": "Soil Component Surface Texture Class"
+                                                }
+                                            ],
+                                            "description": "Soil Component Surface Texture Class List"
+                                        }
+                                    ],
+                                    "description": "Component"
+                                },
+                                {
+                                    "name": "component",
+                                    "value": [
+                                        {
+                                            "name": "cokey",
+                                            "value": "12573524",
+                                            "description": "Soil Component Key"
+                                        },
+                                        {
+                                            "name": "compname",
+                                            "value": "Hamerly",
+                                            "description": "Soil Component Name"
+                                        },
+                                        {
+                                            "name": "comppct_r",
+                                            "value": 9,
+                                            "description": "Soil Component Percentage Relative Value"
+                                        },
+                                        {
+                                            "name": "slopepct_l",
+                                            "value": 0,
+                                            "description": "Slope Percent ñ Low Value"
+                                        },
+                                        {
+                                            "name": "slopepct_r",
+                                            "value": 2,
+                                            "description": "Slope Percent ñ Representative Value"
+                                        },
+                                        {
+                                            "name": "slopepct_h",
+                                            "value": 3,
+                                            "description": "Slope Percent ñ High Value"
+                                        },
+                                        {
+                                            "name": "ecological_site_list",
+                                            "value": [
+                                                {
+                                                    "name": "ecological_site",
+                                                    "value": [
+                                                        {
+                                                            "name": "es_id",
+                                                            "value": "R055BY058ND",
+                                                            "description": "Ecological Site Identifier"
+                                                        },
+                                                        {
+                                                            "name": "es_range_name",
+                                                            "value": "Limy Subirrigated  ",
+                                                            "description": "Ecological Site Name"
+                                                        }
+                                                    ],
+                                                    "description": "Ecological Site"
+                                                }
+                                            ],
+                                            "description": "Ecological Site List"
+                                        },
+                                        {
+                                            "name": "surface_texture_class_list",
+                                            "value": [
+                                                {
+                                                    "name": "surface_texture_class",
+                                                    "value": [
+                                                        {
+                                                            "name": "texcl",
+                                                            "value": "Loam",
+                                                            "description": "SSURGO Texture Class"
+                                                        },
+                                                        {
+                                                            "name": "rhem_texture_id ",
+                                                            "value": 13,
+                                                            "description": "RHEM Texture Class Identifier"
+                                                        },
+                                                        {
+                                                            "name": "rhem_texture_class ",
+                                                            "value": "l",
+                                                            "description": "RHEM Texture Class"
+                                                        },
+                                                        {
+                                                            "name": "rhem_texture_class_label ",
+                                                            "value": "Loam",
+                                                            "description": "RHEM Texture Class Label"
+                                                        }
+                                                    ],
+                                                    "description": "Soil Component Surface Texture Class"
+                                                }
+                                            ],
+                                            "description": "Soil Component Surface Texture Class List"
+                                        }
+                                    ],
+                                    "description": "Component"
+                                },
+                                {
+                                    "name": "component",
+                                    "value": [
+                                        {
+                                            "name": "cokey",
+                                            "value": "12573527",
+                                            "description": "Soil Component Key"
+                                        },
+                                        {
+                                            "name": "compname",
+                                            "value": "Renshaw",
+                                            "description": "Soil Component Name"
+                                        },
+                                        {
+                                            "name": "comppct_r",
+                                            "value": 3,
+                                            "description": "Soil Component Percentage Relative Value"
+                                        },
+                                        {
+                                            "name": "slopepct_l",
+                                            "value": 0,
+                                            "description": "Slope Percent ñ Low Value"
+                                        },
+                                        {
+                                            "name": "slopepct_r",
+                                            "value": 1,
+                                            "description": "Slope Percent ñ Representative Value"
+                                        },
+                                        {
+                                            "name": "slopepct_h",
+                                            "value": 2,
+                                            "description": "Slope Percent ñ High Value"
+                                        },
+                                        {
+                                            "name": "ecological_site_list",
+                                            "value": [
+                                                {
+                                                    "name": "ecological_site",
+                                                    "value": [
+                                                        {
+                                                            "name": "es_id",
+                                                            "value": "R055BY063ND",
+                                                            "description": "Ecological Site Identifier"
+                                                        },
+                                                        {
+                                                            "name": "es_range_name",
+                                                            "value": "Shallow Gravel  ",
+                                                            "description": "Ecological Site Name"
+                                                        }
+                                                    ],
+                                                    "description": "Ecological Site"
+                                                }
+                                            ],
+                                            "description": "Ecological Site List"
+                                        },
+                                        {
+                                            "name": "surface_texture_class_list",
+                                            "value": [
+                                                {
+                                                    "name": "surface_texture_class",
+                                                    "value": [
+                                                        {
+                                                            "name": "texcl",
+                                                            "value": "Loam",
+                                                            "description": "SSURGO Texture Class"
+                                                        },
+                                                        {
+                                                            "name": "rhem_texture_id ",
+                                                            "value": 13,
+                                                            "description": "RHEM Texture Class Identifier"
+                                                        },
+                                                        {
+                                                            "name": "rhem_texture_class ",
+                                                            "value": "l",
+                                                            "description": "RHEM Texture Class"
+                                                        },
+                                                        {
+                                                            "name": "rhem_texture_class_label ",
+                                                            "value": "Loam",
+                                                            "description": "RHEM Texture Class Label"
+                                                        }
+                                                    ],
+                                                    "description": "Soil Component Surface Texture Class"
+                                                }
+                                            ],
+                                            "description": "Soil Component Surface Texture Class List"
+                                        }
+                                    ],
+                                    "description": "Component"
+                                },
+                                {
+                                    "name": "component",
+                                    "value": [
+                                        {
+                                            "name": "cokey",
+                                            "value": "12573528",
+                                            "description": "Soil Component Key"
+                                        },
+                                        {
+                                            "name": "compname",
+                                            "value": "Cresbard",
+                                            "description": "Soil Component Name"
+                                        },
+                                        {
+                                            "name": "comppct_r",
+                                            "value": 3,
+                                            "description": "Soil Component Percentage Relative Value"
+                                        },
+                                        {
+                                            "name": "slopepct_l",
+                                            "value": 0,
+                                            "description": "Slope Percent ñ Low Value"
+                                        },
+                                        {
+                                            "name": "slopepct_r",
+                                            "value": 1,
+                                            "description": "Slope Percent ñ Representative Value"
+                                        },
+                                        {
+                                            "name": "slopepct_h",
+                                            "value": 3,
+                                            "description": "Slope Percent ñ High Value"
+                                        },
+                                        {
+                                            "name": "ecological_site_list",
+                                            "value": [
+                                                {
+                                                    "name": "ecological_site",
+                                                    "value": [
+                                                        {
+                                                            "name": "es_id",
+                                                            "value": "R055BY056ND",
+                                                            "description": "Ecological Site Identifier"
+                                                        },
+                                                        {
+                                                            "name": "es_range_name",
+                                                            "value": "Clayey  ",
+                                                            "description": "Ecological Site Name"
+                                                        }
+                                                    ],
+                                                    "description": "Ecological Site"
+                                                }
+                                            ],
+                                            "description": "Ecological Site List"
+                                        },
+                                        {
+                                            "name": "surface_texture_class_list",
+                                            "value": [
+                                                {
+                                                    "name": "surface_texture_class",
+                                                    "value": [
+                                                        {
+                                                            "name": "texcl",
+                                                            "value": "Loam",
+                                                            "description": "SSURGO Texture Class"
+                                                        },
+                                                        {
+                                                            "name": "rhem_texture_id ",
+                                                            "value": 13,
+                                                            "description": "RHEM Texture Class Identifier"
+                                                        },
+                                                        {
+                                                            "name": "rhem_texture_class ",
+                                                            "value": "l",
+                                                            "description": "RHEM Texture Class"
+                                                        },
+                                                        {
+                                                            "name": "rhem_texture_class_label ",
+                                                            "value": "Loam",
+                                                            "description": "RHEM Texture Class Label"
+                                                        }
+                                                    ],
+                                                    "description": "Soil Component Surface Texture Class"
+                                                }
+                                            ],
+                                            "description": "Soil Component Surface Texture Class List"
+                                        }
+                                    ],
+                                    "description": "Component"
+                                },
+                                {
+                                    "name": "component",
+                                    "value": [
+                                        {
+                                            "name": "cokey",
+                                            "value": "12573529",
+                                            "description": "Soil Component Key"
+                                        },
+                                        {
+                                            "name": "compname",
+                                            "value": "Tonka",
+                                            "description": "Soil Component Name"
+                                        },
+                                        {
+                                            "name": "comppct_r",
+                                            "value": 3,
+                                            "description": "Soil Component Percentage Relative Value"
+                                        },
+                                        {
+                                            "name": "slopepct_l",
+                                            "value": 0,
+                                            "description": "Slope Percent ñ Low Value"
+                                        },
+                                        {
+                                            "name": "slopepct_r",
+                                            "value": 0,
+                                            "description": "Slope Percent ñ Representative Value"
+                                        },
+                                        {
+                                            "name": "slopepct_h",
+                                            "value": 1,
+                                            "description": "Slope Percent ñ High Value"
+                                        },
+                                        {
+                                            "name": "ecological_site_list",
+                                            "value": [
+                                                {
+                                                    "name": "ecological_site",
+                                                    "value": [
+                                                        {
+                                                            "name": "es_id",
+                                                            "value": "R055BY071ND",
+                                                            "description": "Ecological Site Identifier"
+                                                        },
+                                                        {
+                                                            "name": "es_range_name",
+                                                            "value": "Wet Meadow  ",
+                                                            "description": "Ecological Site Name"
+                                                        }
+                                                    ],
+                                                    "description": "Ecological Site"
+                                                }
+                                            ],
+                                            "description": "Ecological Site List"
+                                        },
+                                        {
+                                            "name": "surface_texture_class_list",
+                                            "value": [
+                                                {
+                                                    "name": "surface_texture_class",
+                                                    "value": [
+                                                        {
+                                                            "name": "texcl",
+                                                            "value": "Silt loam",
+                                                            "description": "SSURGO Texture Class"
+                                                        },
+                                                        {
+                                                            "name": "rhem_texture_id ",
+                                                            "value": 14,
+                                                            "description": "RHEM Texture Class Identifier"
+                                                        },
+                                                        {
+                                                            "name": "rhem_texture_class ",
+                                                            "value": "sil",
+                                                            "description": "RHEM Texture Class"
+                                                        },
+                                                        {
+                                                            "name": "rhem_texture_class_label ",
+                                                            "value": "Silt loam",
+                                                            "description": "RHEM Texture Class Label"
+                                                        }
+                                                    ],
+                                                    "description": "Soil Component Surface Texture Class"
+                                                }
+                                            ],
+                                            "description": "Soil Component Surface Texture Class List"
+                                        }
+                                    ],
+                                    "description": "Component"
+                                },
+                                {
+                                    "name": "component",
+                                    "value": [
+                                        {
+                                            "name": "cokey",
+                                            "value": "12573530",
+                                            "description": "Soil Component Key"
+                                        },
+                                        {
+                                            "name": "compname",
+                                            "value": "Parnell",
+                                            "description": "Soil Component Name"
+                                        },
+                                        {
+                                            "name": "comppct_r",
+                                            "value": 3,
+                                            "description": "Soil Component Percentage Relative Value"
+                                        },
+                                        {
+                                            "name": "slopepct_l",
+                                            "value": 0,
+                                            "description": "Slope Percent ñ Low Value"
+                                        },
+                                        {
+                                            "name": "slopepct_r",
+                                            "value": 0,
+                                            "description": "Slope Percent ñ Representative Value"
+                                        },
+                                        {
+                                            "name": "slopepct_h",
+                                            "value": 1,
+                                            "description": "Slope Percent ñ High Value"
+                                        },
+                                        {
+                                            "name": "ecological_site_list",
+                                            "value": [
+                                                {
+                                                    "name": "ecological_site",
+                                                    "value": [
+                                                        {
+                                                            "name": "es_id",
+                                                            "value": "R055BY070ND",
+                                                            "description": "Ecological Site Identifier"
+                                                        },
+                                                        {
+                                                            "name": "es_range_name",
+                                                            "value": "Shallow Marsh  ",
+                                                            "description": "Ecological Site Name"
+                                                        }
+                                                    ],
+                                                    "description": "Ecological Site"
+                                                }
+                                            ],
+                                            "description": "Ecological Site List"
+                                        },
+                                        {
+                                            "name": "surface_texture_class_list",
+                                            "value": [
+                                                {
+                                                    "name": "surface_texture_class",
+                                                    "value": [
+                                                        {
+                                                            "name": "texcl",
+                                                            "value": "Silty clay loam",
+                                                            "description": "SSURGO Texture Class"
+                                                        },
+                                                        {
+                                                            "name": "rhem_texture_id ",
+                                                            "value": 18,
+                                                            "description": "RHEM Texture Class Identifier"
+                                                        },
+                                                        {
+                                                            "name": "rhem_texture_class ",
+                                                            "value": "sicl",
+                                                            "description": "RHEM Texture Class"
+                                                        },
+                                                        {
+                                                            "name": "rhem_texture_class_label ",
+                                                            "value": "Silty clay loam",
+                                                            "description": "RHEM Texture Class Label"
+                                                        }
+                                                    ],
+                                                    "description": "Soil Component Surface Texture Class"
+                                                }
+                                            ],
+                                            "description": "Soil Component Surface Texture Class List"
+                                        }
+                                    ],
+                                    "description": "Component"
+                                },
+                                {
+                                    "name": "component",
+                                    "value": [
+                                        {
+                                            "name": "cokey",
+                                            "value": "12573526",
+                                            "description": "Soil Component Key"
+                                        },
+                                        {
+                                            "name": "compname",
+                                            "value": "Buse",
+                                            "description": "Soil Component Name"
+                                        },
+                                        {
+                                            "name": "comppct_r",
+                                            "value": 2,
+                                            "description": "Soil Component Percentage Relative Value"
+                                        },
+                                        {
+                                            "name": "slopepct_l",
+                                            "value": 3,
+                                            "description": "Slope Percent ñ Low Value"
+                                        },
+                                        {
+                                            "name": "slopepct_r",
+                                            "value": 5,
+                                            "description": "Slope Percent ñ Representative Value"
+                                        },
+                                        {
+                                            "name": "slopepct_h",
+                                            "value": 6,
+                                            "description": "Slope Percent ñ High Value"
+                                        },
+                                        {
+                                            "name": "ecological_site_list",
+                                            "value": [
+                                                {
+                                                    "name": "ecological_site",
+                                                    "value": [
+                                                        {
+                                                            "name": "es_id",
+                                                            "value": "R055BY068ND",
+                                                            "description": "Ecological Site Identifier"
+                                                        },
+                                                        {
+                                                            "name": "es_range_name",
+                                                            "value": "Thin Loamy  ",
+                                                            "description": "Ecological Site Name"
+                                                        }
+                                                    ],
+                                                    "description": "Ecological Site"
+                                                }
+                                            ],
+                                            "description": "Ecological Site List"
+                                        },
+                                        {
+                                            "name": "surface_texture_class_list",
+                                            "value": [
+                                                {
+                                                    "name": "surface_texture_class",
+                                                    "value": [
+                                                        {
+                                                            "name": "texcl",
+                                                            "value": "Loam",
+                                                            "description": "SSURGO Texture Class"
+                                                        },
+                                                        {
+                                                            "name": "rhem_texture_id ",
+                                                            "value": 13,
+                                                            "description": "RHEM Texture Class Identifier"
+                                                        },
+                                                        {
+                                                            "name": "rhem_texture_class ",
+                                                            "value": "l",
+                                                            "description": "RHEM Texture Class"
+                                                        },
+                                                        {
+                                                            "name": "rhem_texture_class_label ",
+                                                            "value": "Loam",
+                                                            "description": "RHEM Texture Class Label"
+                                                        }
+                                                    ],
+                                                    "description": "Soil Component Surface Texture Class"
+                                                }
+                                            ],
+                                            "description": "Soil Component Surface Texture Class List"
+                                        }
+                                    ],
+                                    "description": "Component"
+                                }
+                            ],
+                            "description": "Component List"
+                        }
+                    ],
+                    "description": "Mapuint"
+                }
+            ],
+            "description": "Mapuint List"
+        }
+    ]
+}

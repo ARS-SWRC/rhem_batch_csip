@@ -1,0 +1,23 @@
+{
+    "metainfo": {},
+    "parameter": [
+        {
+            "name": "AoAID",
+            "value": 1,
+            "Description": "Area of Analysis Identifier"
+        },
+        {
+            "name": "rhem_site_id",
+            "value": 2,
+            "Description": "RHEM Evaluation Site Identifier"
+        },
+        {
+            "name": "rhem_site_geometry",
+            "type": "Point",
+            "coordinates": [
+                -103.873661, 29.305517
+            ],
+            "Description": "RHEM Evaluation Site Geometry"
+        }
+    ]
+}

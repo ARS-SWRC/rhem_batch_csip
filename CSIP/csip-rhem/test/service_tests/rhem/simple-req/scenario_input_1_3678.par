@@ -1,0 +1,40 @@
+! Parameter file for scenario: Winston Chloride
+! Date built: January 20, 2016, 11:44 am (Version 2.3) 
+! Parameter units: DIAMS(mm), DENSITY(g/cc),TEMP(deg C) 
+BEGIN GLOBAL 
+		CLEN	=	125 
+		UNITS	=	metric 
+		DIAMS	=	0.002	0.01	0.03	0.3	0.2
+		DENSITY	=	2.6	2.65	1.8	1.6	2.65
+		TEMP	=	40 
+		NELE	=	1 
+END GLOBAL 
+BEGIN PLANE 
+		ID	=	1 
+		LEN	=	50 
+		WIDTH	=	1.000 
+		CHEZY	=	2.7355397592599 
+		RCHEZY	=	2.7355397592599 
+		SL	=	0.125	,	0.125
+		SX	=	0.00	,	1.00 
+		CV	=	1.0000 
+		SAT	=	0.25 
+		PR	=	1 
+		KSS	=	1292.0704280207 
+		KOMEGA	=	0.000007747 
+		KCM	=	0.000299364300 
+		CA	=	1.000 
+		IN	=	0.0000 
+		KE	=	9.5658051367698 
+		G	=	130 
+		DIST	=	0.38 
+		POR	=	0.4306 
+		ROCK	=	0.0000 
+		SMAX	=	1.0000 
+		ADF	=	0.00 
+		ALF	=	0.8000 
+		BARE	=	0.23 
+		RSP	=	1.000 
+		SPACING	=	1.000 
+		FRACT	=	0.0325	0.0542	0.1801	0.3939	0.3394
+END PLANE 

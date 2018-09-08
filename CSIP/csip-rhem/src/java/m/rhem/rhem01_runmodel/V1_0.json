@@ -1,0 +1,122 @@
+{
+    "metainfo": {},
+    "parameter": [
+        {
+            "name": "AoAID",
+            "description": "Area of Analysis Identifier",
+            "value": 3
+        },
+        {
+            "name": "rhem_site_id",
+            "description": "RHEM Evaluation Site Identifier",
+            "value": 1
+        },
+        {
+            "name": "scenarioname",
+            "description": "RHEM Scenario Name",
+            "value": "Marfa-test-2-v-2.3"
+        },
+        {
+            "name": "scenariodescription",
+            "description": "RHEM Scenario description",
+            "value": ""
+        },
+        {
+            "name": "units",
+            "description": "RHEM Scenario Unit of Measure, 1 = metric and 2 = English",
+            "value": 1
+        },
+        {
+            "name": "stateid",
+            "description": " State Abbreviation",
+            "value": "TX"
+        },
+        {
+            "name": "climatestationid",
+            "description": "Climate Station Identification Number",
+            "value": "415596"
+        },
+        {
+            "name": "soiltexture",
+            "description": "Surface Soil Texture Class Label",
+            "value": "Clay Loam"
+        },
+        {
+            "name": "slopeshape",
+            "description": "Slope Shape",
+            "value": "Uniform"
+        },
+        {
+            "name": "slopesteepness",
+            "description": "Slope Steepness",
+            "value": 1,
+            "unit": "%",
+            "min": 0.01,
+            "max": 100
+        },
+        {
+            "name": "bunchgrasscanopycover",
+            "description": "Bunchgrass Foliar Cover Percent",
+            "value": 10,
+            "unit": "%",
+            "min": 0,
+            "max": 100
+        },
+        {
+            "name": "forbscanopycover",
+            "description": "Forbs and Annuals Foliar Cover Percent",
+            "value": 2,
+            "unit": "%",
+            "min": 0,
+            "max": 100
+        },
+        {
+            "name": "shrubscanopycover",
+            "description": "Shrub Foliar Cover Percent",
+            "value": 25,
+            "unit": "%",
+            "min": 0,
+            "max": 100
+        },
+        {
+            "name": "sodgrasscanopycover",
+            "description": "Sodgrass Foliar Cover Percent",
+            "value": 5,
+            "unit": "%",
+            "min": 0,
+            "max": 100
+        },
+        {
+            "name": "basalcover",
+            "description": "Plant Basal Cover Percent",
+            "value": 5,
+            "unit": "%",
+            "min": 0,
+            "max": 100
+        },
+        {
+            "name": "rockcover",
+            "description": "Rock Cover Percent",
+            "value": 5,
+            "unit": "%",
+            "min": 0,
+            "max": 100
+        },
+        {
+            "name": "littercover",
+            "description": "Litter Cover Percent",
+            "value": 15,
+            "unit": "%",
+            "min": 0,
+            "max": 100
+        },
+        {
+            "name": "cryptogamscover",
+            "Description": "Cryptogam Cover Percent",
+            "value": 5,
+            "unit": "%",
+            "min": 0,
+            "max": 100
+        }
+    ]
+}

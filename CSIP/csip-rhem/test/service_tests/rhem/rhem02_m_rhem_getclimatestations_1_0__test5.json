@@ -1,0 +1,2578 @@
+{
+    "metainfo": {
+        "status": "Finished",
+        "suid": "44a4a0bb-9c5d-11e6-a2e4-d347bd469ade",
+        "cloud_node": "172.1.6.59",
+        "tstamp": "2016-10-27 09:51:47",
+        "service_url": "http://csip.engr.colostate.edu:8092/csip-rhem/m/rhem/getclimatestations/1.0",
+        "request_ip": "129.82.23.212",
+        "csip.version": "$version: 2.1.129 a5c9bcc941fc 2016-10-20 Kyle Traff <kyle.traff@colostate.edu>, built at 2016-10-26 14:55 by jenkins$",
+        "cpu_time": 50,
+        "expiration_date": "2016-10-27 09:56:47"
+    },
+    "parameter": [
+        {
+            "name": "stateid",
+            "description": "State abbreviation of climate station location",
+            "value": "ND"
+        }
+    ],
+    "result": [
+        {
+            "name": "stateid",
+            "value": "ND",
+            "description": "State abbreviation of climate station location"
+        },
+        {
+            "name": "state_name",
+            "value": "North Dakota",
+            "description": "State name"
+        },
+        {
+            "name": "latitude",
+            "value": 47.45,
+            "description": "Central latitude of the state"
+        },
+        {
+            "name": "longitude",
+            "value": -100.5,
+            "description": "Central longitude of the state"
+        },
+        {
+            "name": "zoom",
+            "value": 7,
+            "description": "Zoom level utilized to display state map on UI"
+        },
+        {
+            "name": "climate_station_list",
+            "value": [
+                {
+                    "name": "climate_stations",
+                    "value": [
+                        {
+                            "name": "station_id",
+                            "value": "320209",
+                            "description": "Climate station identification number"
+                        },
+                        {
+                            "name": "station_name",
+                            "value": "AMIDON",
+                            "description": "Climate station name"
+                        },
+                        {
+                            "name": "lat",
+                            "value": 46.48,
+                            "description": "Climate station latitude"
+                        },
+                        {
+                            "name": "long",
+                            "value": -103.32,
+                            "description": "Climate station longitude"
+                        },
+                        {
+                            "name": "year_recorded",
+                            "value": 45,
+                            "description": "Number of years of recorded observations for climate station"
+                        },
+                        {
+                            "name": "elevation_ft",
+                            "value": 2910,
+                            "description": "Climate station elevation"
+                        },
+                        {
+                            "name": "avg_yearly_precip_mm",
+                            "value": 370.52,
+                            "description": "300 year average annual precipitation (mm)"
+                        },
+                        {
+                            "name": "jan_precip_mm",
+                            "value": 9,
+                            "description": "January estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "feb_precip_mm",
+                            "value": 7.8,
+                            "description": "February estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "mar_precip_mm",
+                            "value": 11.2,
+                            "description": "March estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "apr_precip_mm",
+                            "value": 34.4,
+                            "description": "April estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "may_precip_mm",
+                            "value": 57,
+                            "description": "May estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "jun_precip_mm",
+                            "value": 79.6,
+                            "description": "June estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "jul_precip_mm",
+                            "value": 59.8,
+                            "description": "July estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "aug_precip_mm",
+                            "value": 37.1,
+                            "description": "August estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "sep_precip_mm",
+                            "value": 32.2,
+                            "description": "September estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "oct_precip_mm",
+                            "value": 21.6,
+                            "description": "October estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "nov_precip_mm",
+                            "value": 11.6,
+                            "description": "November estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "dec_precip_mm",
+                            "value": 9.2,
+                            "description": "December estimated monthly average precipitation (mm)"
+                        }
+                    ],
+                    "description": "Climate station attributes"
+                },
+                {
+                    "name": "climate_stations",
+                    "value": [
+                        {
+                            "name": "station_id",
+                            "value": "320819",
+                            "description": "Climate station identification number"
+                        },
+                        {
+                            "name": "station_name",
+                            "value": "BISMARCK WB AIRPORT",
+                            "description": "Climate station name"
+                        },
+                        {
+                            "name": "lat",
+                            "value": 46.77,
+                            "description": "Climate station latitude"
+                        },
+                        {
+                            "name": "long",
+                            "value": -100.75,
+                            "description": "Climate station longitude"
+                        },
+                        {
+                            "name": "year_recorded",
+                            "value": 45,
+                            "description": "Number of years of recorded observations for climate station"
+                        },
+                        {
+                            "name": "elevation_ft",
+                            "value": 1650,
+                            "description": "Climate station elevation"
+                        },
+                        {
+                            "name": "avg_yearly_precip_mm",
+                            "value": 385.85,
+                            "description": "300 year average annual precipitation (mm)"
+                        },
+                        {
+                            "name": "jan_precip_mm",
+                            "value": 11.7,
+                            "description": "January estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "feb_precip_mm",
+                            "value": 10.5,
+                            "description": "February estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "mar_precip_mm",
+                            "value": 19.3,
+                            "description": "March estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "apr_precip_mm",
+                            "value": 37.8,
+                            "description": "April estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "may_precip_mm",
+                            "value": 56.8,
+                            "description": "May estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "jun_precip_mm",
+                            "value": 70.4,
+                            "description": "June estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "jul_precip_mm",
+                            "value": 53,
+                            "description": "July estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "aug_precip_mm",
+                            "value": 43.8,
+                            "description": "August estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "sep_precip_mm",
+                            "value": 33.6,
+                            "description": "September estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "oct_precip_mm",
+                            "value": 22.2,
+                            "description": "October estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "nov_precip_mm",
+                            "value": 15.1,
+                            "description": "November estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "dec_precip_mm",
+                            "value": 11.8,
+                            "description": "December estimated monthly average precipitation (mm)"
+                        }
+                    ],
+                    "description": "Climate station attributes"
+                },
+                {
+                    "name": "climate_stations",
+                    "value": [
+                        {
+                            "name": "station_id",
+                            "value": "321370",
+                            "description": "Climate station identification number"
+                        },
+                        {
+                            "name": "station_name",
+                            "value": "CARSON 2 S W",
+                            "description": "Climate station name"
+                        },
+                        {
+                            "name": "lat",
+                            "value": 46.38,
+                            "description": "Climate station latitude"
+                        },
+                        {
+                            "name": "long",
+                            "value": -101.58,
+                            "description": "Climate station longitude"
+                        },
+                        {
+                            "name": "year_recorded",
+                            "value": 45,
+                            "description": "Number of years of recorded observations for climate station"
+                        },
+                        {
+                            "name": "elevation_ft",
+                            "value": 2500,
+                            "description": "Climate station elevation"
+                        },
+                        {
+                            "name": "avg_yearly_precip_mm",
+                            "value": 412.62,
+                            "description": "300 year average annual precipitation (mm)"
+                        },
+                        {
+                            "name": "jan_precip_mm",
+                            "value": 8.1,
+                            "description": "January estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "feb_precip_mm",
+                            "value": 8,
+                            "description": "February estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "mar_precip_mm",
+                            "value": 17.7,
+                            "description": "March estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "apr_precip_mm",
+                            "value": 44.5,
+                            "description": "April estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "may_precip_mm",
+                            "value": 66.7,
+                            "description": "May estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "jun_precip_mm",
+                            "value": 83.2,
+                            "description": "June estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "jul_precip_mm",
+                            "value": 62.1,
+                            "description": "July estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "aug_precip_mm",
+                            "value": 47.7,
+                            "description": "August estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "sep_precip_mm",
+                            "value": 31.8,
+                            "description": "September estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "oct_precip_mm",
+                            "value": 22.6,
+                            "description": "October estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "nov_precip_mm",
+                            "value": 11.4,
+                            "description": "November estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "dec_precip_mm",
+                            "value": 8.8,
+                            "description": "December estimated monthly average precipitation (mm)"
+                        }
+                    ],
+                    "description": "Climate station attributes"
+                },
+                {
+                    "name": "climate_stations",
+                    "value": [
+                        {
+                            "name": "station_id",
+                            "value": "322365",
+                            "description": "Climate station identification number"
+                        },
+                        {
+                            "name": "station_name",
+                            "value": "DUNN CENTER",
+                            "description": "Climate station name"
+                        },
+                        {
+                            "name": "lat",
+                            "value": 47.35,
+                            "description": "Climate station latitude"
+                        },
+                        {
+                            "name": "long",
+                            "value": -102.62,
+                            "description": "Climate station longitude"
+                        },
+                        {
+                            "name": "year_recorded",
+                            "value": 45,
+                            "description": "Number of years of recorded observations for climate station"
+                        },
+                        {
+                            "name": "elevation_ft",
+                            "value": 2190,
+                            "description": "Climate station elevation"
+                        },
+                        {
+                            "name": "avg_yearly_precip_mm",
+                            "value": 405.19,
+                            "description": "300 year average annual precipitation (mm)"
+                        },
+                        {
+                            "name": "jan_precip_mm",
+                            "value": 9.7,
+                            "description": "January estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "feb_precip_mm",
+                            "value": 9.9,
+                            "description": "February estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "mar_precip_mm",
+                            "value": 16.3,
+                            "description": "March estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "apr_precip_mm",
+                            "value": 38.8,
+                            "description": "April estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "may_precip_mm",
+                            "value": 55.2,
+                            "description": "May estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "jun_precip_mm",
+                            "value": 89.7,
+                            "description": "June estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "jul_precip_mm",
+                            "value": 56.7,
+                            "description": "July estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "aug_precip_mm",
+                            "value": 44,
+                            "description": "August estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "sep_precip_mm",
+                            "value": 38.5,
+                            "description": "September estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "oct_precip_mm",
+                            "value": 23.9,
+                            "description": "October estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "nov_precip_mm",
+                            "value": 13,
+                            "description": "November estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "dec_precip_mm",
+                            "value": 9.5,
+                            "description": "December estimated monthly average precipitation (mm)"
+                        }
+                    ],
+                    "description": "Climate station attributes"
+                },
+                {
+                    "name": "climate_stations",
+                    "value": [
+                        {
+                            "name": "station_id",
+                            "value": "322525",
+                            "description": "Climate station identification number"
+                        },
+                        {
+                            "name": "station_name",
+                            "value": "EDMORE 1 W",
+                            "description": "Climate station name"
+                        },
+                        {
+                            "name": "lat",
+                            "value": 48.42,
+                            "description": "Climate station latitude"
+                        },
+                        {
+                            "name": "long",
+                            "value": -98.48,
+                            "description": "Climate station longitude"
+                        },
+                        {
+                            "name": "year_recorded",
+                            "value": 45,
+                            "description": "Number of years of recorded observations for climate station"
+                        },
+                        {
+                            "name": "elevation_ft",
+                            "value": 1520,
+                            "description": "Climate station elevation"
+                        },
+                        {
+                            "name": "avg_yearly_precip_mm",
+                            "value": 396.08,
+                            "description": "300 year average annual precipitation (mm)"
+                        },
+                        {
+                            "name": "jan_precip_mm",
+                            "value": 11,
+                            "description": "January estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "feb_precip_mm",
+                            "value": 8.3,
+                            "description": "February estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "mar_precip_mm",
+                            "value": 11.9,
+                            "description": "March estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "apr_precip_mm",
+                            "value": 24.6,
+                            "description": "April estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "may_precip_mm",
+                            "value": 50.5,
+                            "description": "May estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "jun_precip_mm",
+                            "value": 76,
+                            "description": "June estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "jul_precip_mm",
+                            "value": 65,
+                            "description": "July estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "aug_precip_mm",
+                            "value": 59.2,
+                            "description": "August estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "sep_precip_mm",
+                            "value": 43.1,
+                            "description": "September estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "oct_precip_mm",
+                            "value": 25,
+                            "description": "October estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "nov_precip_mm",
+                            "value": 12.1,
+                            "description": "November estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "dec_precip_mm",
+                            "value": 9.4,
+                            "description": "December estimated monthly average precipitation (mm)"
+                        }
+                    ],
+                    "description": "Climate station attributes"
+                },
+                {
+                    "name": "climate_stations",
+                    "value": [
+                        {
+                            "name": "station_id",
+                            "value": "322859",
+                            "description": "Climate station identification number"
+                        },
+                        {
+                            "name": "station_name",
+                            "value": "FARGO WB AIRPORT",
+                            "description": "Climate station name"
+                        },
+                        {
+                            "name": "lat",
+                            "value": 46.9,
+                            "description": "Climate station latitude"
+                        },
+                        {
+                            "name": "long",
+                            "value": -96.8,
+                            "description": "Climate station longitude"
+                        },
+                        {
+                            "name": "year_recorded",
+                            "value": 51,
+                            "description": "Number of years of recorded observations for climate station"
+                        },
+                        {
+                            "name": "elevation_ft",
+                            "value": 900,
+                            "description": "Climate station elevation"
+                        },
+                        {
+                            "name": "avg_yearly_precip_mm",
+                            "value": 488.19,
+                            "description": "300 year average annual precipitation (mm)"
+                        },
+                        {
+                            "name": "jan_precip_mm",
+                            "value": 14.7,
+                            "description": "January estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "feb_precip_mm",
+                            "value": 12.4,
+                            "description": "February estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "mar_precip_mm",
+                            "value": 24.7,
+                            "description": "March estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "apr_precip_mm",
+                            "value": 46.4,
+                            "description": "April estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "may_precip_mm",
+                            "value": 57.9,
+                            "description": "May estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "jun_precip_mm",
+                            "value": 80,
+                            "description": "June estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "jul_precip_mm",
+                            "value": 74,
+                            "description": "July estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "aug_precip_mm",
+                            "value": 64.3,
+                            "description": "August estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "sep_precip_mm",
+                            "value": 43.4,
+                            "description": "September estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "oct_precip_mm",
+                            "value": 34.5,
+                            "description": "October estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "nov_precip_mm",
+                            "value": 19.8,
+                            "description": "November estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "dec_precip_mm",
+                            "value": 16,
+                            "description": "December estimated monthly average precipitation (mm)"
+                        }
+                    ],
+                    "description": "Climate station attributes"
+                },
+                {
+                    "name": "climate_stations",
+                    "value": [
+                        {
+                            "name": "station_id",
+                            "value": "322949",
+                            "description": "Climate station identification number"
+                        },
+                        {
+                            "name": "station_name",
+                            "value": "FESSENDEN",
+                            "description": "Climate station name"
+                        },
+                        {
+                            "name": "lat",
+                            "value": 47.65,
+                            "description": "Climate station latitude"
+                        },
+                        {
+                            "name": "long",
+                            "value": -99.62,
+                            "description": "Climate station longitude"
+                        },
+                        {
+                            "name": "year_recorded",
+                            "value": 58,
+                            "description": "Number of years of recorded observations for climate station"
+                        },
+                        {
+                            "name": "elevation_ft",
+                            "value": 1610,
+                            "description": "Climate station elevation"
+                        },
+                        {
+                            "name": "avg_yearly_precip_mm",
+                            "value": 425.59,
+                            "description": "300 year average annual precipitation (mm)"
+                        },
+                        {
+                            "name": "jan_precip_mm",
+                            "value": 13.9,
+                            "description": "January estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "feb_precip_mm",
+                            "value": 11.7,
+                            "description": "February estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "mar_precip_mm",
+                            "value": 17,
+                            "description": "March estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "apr_precip_mm",
+                            "value": 33.5,
+                            "description": "April estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "may_precip_mm",
+                            "value": 56.7,
+                            "description": "May estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "jun_precip_mm",
+                            "value": 84,
+                            "description": "June estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "jul_precip_mm",
+                            "value": 65.3,
+                            "description": "July estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "aug_precip_mm",
+                            "value": 48.1,
+                            "description": "August estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "sep_precip_mm",
+                            "value": 39.8,
+                            "description": "September estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "oct_precip_mm",
+                            "value": 26.4,
+                            "description": "October estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "nov_precip_mm",
+                            "value": 16.3,
+                            "description": "November estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "dec_precip_mm",
+                            "value": 12.9,
+                            "description": "December estimated monthly average precipitation (mm)"
+                        }
+                    ],
+                    "description": "Climate station attributes"
+                },
+                {
+                    "name": "climate_stations",
+                    "value": [
+                        {
+                            "name": "station_id",
+                            "value": "323217",
+                            "description": "Climate station identification number"
+                        },
+                        {
+                            "name": "station_name",
+                            "value": "FOXHOLM WILDLIFE RF",
+                            "description": "Climate station name"
+                        },
+                        {
+                            "name": "lat",
+                            "value": 48.45,
+                            "description": "Climate station latitude"
+                        },
+                        {
+                            "name": "long",
+                            "value": -101.57,
+                            "description": "Climate station longitude"
+                        },
+                        {
+                            "name": "year_recorded",
+                            "value": 45,
+                            "description": "Number of years of recorded observations for climate station"
+                        },
+                        {
+                            "name": "elevation_ft",
+                            "value": 1610,
+                            "description": "Climate station elevation"
+                        },
+                        {
+                            "name": "avg_yearly_precip_mm",
+                            "value": 396.64,
+                            "description": "300 year average annual precipitation (mm)"
+                        },
+                        {
+                            "name": "jan_precip_mm",
+                            "value": 11.9,
+                            "description": "January estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "feb_precip_mm",
+                            "value": 8.9,
+                            "description": "February estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "mar_precip_mm",
+                            "value": 15.7,
+                            "description": "March estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "apr_precip_mm",
+                            "value": 37.5,
+                            "description": "April estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "may_precip_mm",
+                            "value": 51,
+                            "description": "May estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "jun_precip_mm",
+                            "value": 80.3,
+                            "description": "June estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "jul_precip_mm",
+                            "value": 55.6,
+                            "description": "July estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "aug_precip_mm",
+                            "value": 48.5,
+                            "description": "August estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "sep_precip_mm",
+                            "value": 38.3,
+                            "description": "September estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "oct_precip_mm",
+                            "value": 23.3,
+                            "description": "October estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "nov_precip_mm",
+                            "value": 13.9,
+                            "description": "November estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "dec_precip_mm",
+                            "value": 11.6,
+                            "description": "December estimated monthly average precipitation (mm)"
+                        }
+                    ],
+                    "description": "Climate station attributes"
+                },
+                {
+                    "name": "climate_stations",
+                    "value": [
+                        {
+                            "name": "station_id",
+                            "value": "323594",
+                            "description": "Climate station identification number"
+                        },
+                        {
+                            "name": "station_name",
+                            "value": "GRAFTON STATE SCH",
+                            "description": "Climate station name"
+                        },
+                        {
+                            "name": "lat",
+                            "value": 48.42,
+                            "description": "Climate station latitude"
+                        },
+                        {
+                            "name": "long",
+                            "value": -97.42,
+                            "description": "Climate station longitude"
+                        },
+                        {
+                            "name": "year_recorded",
+                            "value": 45,
+                            "description": "Number of years of recorded observations for climate station"
+                        },
+                        {
+                            "name": "elevation_ft",
+                            "value": 830,
+                            "description": "Climate station elevation"
+                        },
+                        {
+                            "name": "avg_yearly_precip_mm",
+                            "value": 446.29,
+                            "description": "300 year average annual precipitation (mm)"
+                        },
+                        {
+                            "name": "jan_precip_mm",
+                            "value": 14.9,
+                            "description": "January estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "feb_precip_mm",
+                            "value": 9.9,
+                            "description": "February estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "mar_precip_mm",
+                            "value": 19.5,
+                            "description": "March estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "apr_precip_mm",
+                            "value": 36.1,
+                            "description": "April estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "may_precip_mm",
+                            "value": 58.1,
+                            "description": "May estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "jun_precip_mm",
+                            "value": 82,
+                            "description": "June estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "jul_precip_mm",
+                            "value": 65.7,
+                            "description": "July estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "aug_precip_mm",
+                            "value": 56,
+                            "description": "August estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "sep_precip_mm",
+                            "value": 43.4,
+                            "description": "September estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "oct_precip_mm",
+                            "value": 29.4,
+                            "description": "October estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "nov_precip_mm",
+                            "value": 17.8,
+                            "description": "November estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "dec_precip_mm",
+                            "value": 13.4,
+                            "description": "December estimated monthly average precipitation (mm)"
+                        }
+                    ],
+                    "description": "Climate station attributes"
+                },
+                {
+                    "name": "climate_stations",
+                    "value": [
+                        {
+                            "name": "station_id",
+                            "value": "323736",
+                            "description": "Climate station identification number"
+                        },
+                        {
+                            "name": "station_name",
+                            "value": "GRENORA",
+                            "description": "Climate station name"
+                        },
+                        {
+                            "name": "lat",
+                            "value": 48.62,
+                            "description": "Climate station latitude"
+                        },
+                        {
+                            "name": "long",
+                            "value": -103.93,
+                            "description": "Climate station longitude"
+                        },
+                        {
+                            "name": "year_recorded",
+                            "value": 42,
+                            "description": "Number of years of recorded observations for climate station"
+                        },
+                        {
+                            "name": "elevation_ft",
+                            "value": 2110,
+                            "description": "Climate station elevation"
+                        },
+                        {
+                            "name": "avg_yearly_precip_mm",
+                            "value": 320.33,
+                            "description": "300 year average annual precipitation (mm)"
+                        },
+                        {
+                            "name": "jan_precip_mm",
+                            "value": 8.8,
+                            "description": "January estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "feb_precip_mm",
+                            "value": 7.6,
+                            "description": "February estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "mar_precip_mm",
+                            "value": 10.2,
+                            "description": "March estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "apr_precip_mm",
+                            "value": 26.7,
+                            "description": "April estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "may_precip_mm",
+                            "value": 45.6,
+                            "description": "May estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "jun_precip_mm",
+                            "value": 67.8,
+                            "description": "June estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "jul_precip_mm",
+                            "value": 47.4,
+                            "description": "July estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "aug_precip_mm",
+                            "value": 36.6,
+                            "description": "August estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "sep_precip_mm",
+                            "value": 32.7,
+                            "description": "September estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "oct_precip_mm",
+                            "value": 16.5,
+                            "description": "October estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "nov_precip_mm",
+                            "value": 10,
+                            "description": "November estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "dec_precip_mm",
+                            "value": 10.3,
+                            "description": "December estimated monthly average precipitation (mm)"
+                        }
+                    ],
+                    "description": "Climate station attributes"
+                },
+                {
+                    "name": "climate_stations",
+                    "value": [
+                        {
+                            "name": "station_id",
+                            "value": "324102",
+                            "description": "Climate station identification number"
+                        },
+                        {
+                            "name": "station_name",
+                            "value": "HEBRON",
+                            "description": "Climate station name"
+                        },
+                        {
+                            "name": "lat",
+                            "value": 46.9,
+                            "description": "Climate station latitude"
+                        },
+                        {
+                            "name": "long",
+                            "value": -102.05,
+                            "description": "Climate station longitude"
+                        },
+                        {
+                            "name": "year_recorded",
+                            "value": 24,
+                            "description": "Number of years of recorded observations for climate station"
+                        },
+                        {
+                            "name": "elevation_ft",
+                            "value": 2160,
+                            "description": "Climate station elevation"
+                        },
+                        {
+                            "name": "avg_yearly_precip_mm",
+                            "value": 383.76,
+                            "description": "300 year average annual precipitation (mm)"
+                        },
+                        {
+                            "name": "jan_precip_mm",
+                            "value": 7.5,
+                            "description": "January estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "feb_precip_mm",
+                            "value": 5,
+                            "description": "February estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "mar_precip_mm",
+                            "value": 12.8,
+                            "description": "March estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "apr_precip_mm",
+                            "value": 46,
+                            "description": "April estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "may_precip_mm",
+                            "value": 60.2,
+                            "description": "May estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "jun_precip_mm",
+                            "value": 88.1,
+                            "description": "June estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "jul_precip_mm",
+                            "value": 49.6,
+                            "description": "July estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "aug_precip_mm",
+                            "value": 35.9,
+                            "description": "August estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "sep_precip_mm",
+                            "value": 40.3,
+                            "description": "September estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "oct_precip_mm",
+                            "value": 19.5,
+                            "description": "October estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "nov_precip_mm",
+                            "value": 10.8,
+                            "description": "November estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "dec_precip_mm",
+                            "value": 7.9,
+                            "description": "December estimated monthly average precipitation (mm)"
+                        }
+                    ],
+                    "description": "Climate station attributes"
+                },
+                {
+                    "name": "climate_stations",
+                    "value": [
+                        {
+                            "name": "station_id",
+                            "value": "324937",
+                            "description": "Climate station identification number"
+                        },
+                        {
+                            "name": "station_name",
+                            "value": "LA MOURE",
+                            "description": "Climate station name"
+                        },
+                        {
+                            "name": "lat",
+                            "value": 46.35,
+                            "description": "Climate station latitude"
+                        },
+                        {
+                            "name": "long",
+                            "value": -98.3,
+                            "description": "Climate station longitude"
+                        },
+                        {
+                            "name": "year_recorded",
+                            "value": 34,
+                            "description": "Number of years of recorded observations for climate station"
+                        },
+                        {
+                            "name": "elevation_ft",
+                            "value": 1380,
+                            "description": "Climate station elevation"
+                        },
+                        {
+                            "name": "avg_yearly_precip_mm",
+                            "value": 462.54,
+                            "description": "300 year average annual precipitation (mm)"
+                        },
+                        {
+                            "name": "jan_precip_mm",
+                            "value": 11,
+                            "description": "January estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "feb_precip_mm",
+                            "value": 11.3,
+                            "description": "February estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "mar_precip_mm",
+                            "value": 24.8,
+                            "description": "March estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "apr_precip_mm",
+                            "value": 51.9,
+                            "description": "April estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "may_precip_mm",
+                            "value": 61.6,
+                            "description": "May estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "jun_precip_mm",
+                            "value": 87.6,
+                            "description": "June estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "jul_precip_mm",
+                            "value": 62.4,
+                            "description": "July estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "aug_precip_mm",
+                            "value": 57.6,
+                            "description": "August estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "sep_precip_mm",
+                            "value": 40.5,
+                            "description": "September estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "oct_precip_mm",
+                            "value": 30.1,
+                            "description": "October estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "nov_precip_mm",
+                            "value": 14.6,
+                            "description": "November estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "dec_precip_mm",
+                            "value": 9.2,
+                            "description": "December estimated monthly average precipitation (mm)"
+                        }
+                    ],
+                    "description": "Climate station attributes"
+                },
+                {
+                    "name": "climate_stations",
+                    "value": [
+                        {
+                            "name": "station_id",
+                            "value": "325078",
+                            "description": "Climate station identification number"
+                        },
+                        {
+                            "name": "station_name",
+                            "value": "LEEDS",
+                            "description": "Climate station name"
+                        },
+                        {
+                            "name": "lat",
+                            "value": 48.28,
+                            "description": "Climate station latitude"
+                        },
+                        {
+                            "name": "long",
+                            "value": -99.43,
+                            "description": "Climate station longitude"
+                        },
+                        {
+                            "name": "year_recorded",
+                            "value": 45,
+                            "description": "Number of years of recorded observations for climate station"
+                        },
+                        {
+                            "name": "elevation_ft",
+                            "value": 1520,
+                            "description": "Climate station elevation"
+                        },
+                        {
+                            "name": "avg_yearly_precip_mm",
+                            "value": 423.93,
+                            "description": "300 year average annual precipitation (mm)"
+                        },
+                        {
+                            "name": "jan_precip_mm",
+                            "value": 17,
+                            "description": "January estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "feb_precip_mm",
+                            "value": 10,
+                            "description": "February estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "mar_precip_mm",
+                            "value": 19.1,
+                            "description": "March estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "apr_precip_mm",
+                            "value": 32,
+                            "description": "April estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "may_precip_mm",
+                            "value": 52.7,
+                            "description": "May estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "jun_precip_mm",
+                            "value": 73.8,
+                            "description": "June estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "jul_precip_mm",
+                            "value": 64.7,
+                            "description": "July estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "aug_precip_mm",
+                            "value": 51.8,
+                            "description": "August estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "sep_precip_mm",
+                            "value": 43,
+                            "description": "September estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "oct_precip_mm",
+                            "value": 26.8,
+                            "description": "October estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "nov_precip_mm",
+                            "value": 17.6,
+                            "description": "November estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "dec_precip_mm",
+                            "value": 15.4,
+                            "description": "December estimated monthly average precipitation (mm)"
+                        }
+                    ],
+                    "description": "Climate station attributes"
+                },
+                {
+                    "name": "climate_stations",
+                    "value": [
+                        {
+                            "name": "station_id",
+                            "value": "325660",
+                            "description": "Climate station identification number"
+                        },
+                        {
+                            "name": "station_name",
+                            "value": "MAYVILLE",
+                            "description": "Climate station name"
+                        },
+                        {
+                            "name": "lat",
+                            "value": 47.5,
+                            "description": "Climate station latitude"
+                        },
+                        {
+                            "name": "long",
+                            "value": -97.32,
+                            "description": "Climate station longitude"
+                        },
+                        {
+                            "name": "year_recorded",
+                            "value": 77,
+                            "description": "Number of years of recorded observations for climate station"
+                        },
+                        {
+                            "name": "elevation_ft",
+                            "value": 980,
+                            "description": "Climate station elevation"
+                        },
+                        {
+                            "name": "avg_yearly_precip_mm",
+                            "value": 465.01,
+                            "description": "300 year average annual precipitation (mm)"
+                        },
+                        {
+                            "name": "jan_precip_mm",
+                            "value": 13.8,
+                            "description": "January estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "feb_precip_mm",
+                            "value": 12.5,
+                            "description": "February estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "mar_precip_mm",
+                            "value": 18.5,
+                            "description": "March estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "apr_precip_mm",
+                            "value": 39.1,
+                            "description": "April estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "may_precip_mm",
+                            "value": 63.5,
+                            "description": "May estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "jun_precip_mm",
+                            "value": 85.3,
+                            "description": "June estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "jul_precip_mm",
+                            "value": 59.6,
+                            "description": "July estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "aug_precip_mm",
+                            "value": 58.1,
+                            "description": "August estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "sep_precip_mm",
+                            "value": 49.1,
+                            "description": "September estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "oct_precip_mm",
+                            "value": 33.1,
+                            "description": "October estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "nov_precip_mm",
+                            "value": 19,
+                            "description": "November estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "dec_precip_mm",
+                            "value": 13.1,
+                            "description": "December estimated monthly average precipitation (mm)"
+                        }
+                    ],
+                    "description": "Climate station attributes"
+                },
+                {
+                    "name": "climate_stations",
+                    "value": [
+                        {
+                            "name": "station_id",
+                            "value": "325710",
+                            "description": "Climate station identification number"
+                        },
+                        {
+                            "name": "station_name",
+                            "value": "MC CLUSKY",
+                            "description": "Climate station name"
+                        },
+                        {
+                            "name": "lat",
+                            "value": 47.48,
+                            "description": "Climate station latitude"
+                        },
+                        {
+                            "name": "long",
+                            "value": -100.47,
+                            "description": "Climate station longitude"
+                        },
+                        {
+                            "name": "year_recorded",
+                            "value": 44,
+                            "description": "Number of years of recorded observations for climate station"
+                        },
+                        {
+                            "name": "elevation_ft",
+                            "value": 1940,
+                            "description": "Climate station elevation"
+                        },
+                        {
+                            "name": "avg_yearly_precip_mm",
+                            "value": 424.31,
+                            "description": "300 year average annual precipitation (mm)"
+                        },
+                        {
+                            "name": "jan_precip_mm",
+                            "value": 14.1,
+                            "description": "January estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "feb_precip_mm",
+                            "value": 10.2,
+                            "description": "February estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "mar_precip_mm",
+                            "value": 18.7,
+                            "description": "March estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "apr_precip_mm",
+                            "value": 33.9,
+                            "description": "April estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "may_precip_mm",
+                            "value": 53.9,
+                            "description": "May estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "jun_precip_mm",
+                            "value": 87.7,
+                            "description": "June estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "jul_precip_mm",
+                            "value": 62.5,
+                            "description": "July estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "aug_precip_mm",
+                            "value": 52.2,
+                            "description": "August estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "sep_precip_mm",
+                            "value": 37.9,
+                            "description": "September estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "oct_precip_mm",
+                            "value": 25.5,
+                            "description": "October estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "nov_precip_mm",
+                            "value": 14.5,
+                            "description": "November estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "dec_precip_mm",
+                            "value": 13.2,
+                            "description": "December estimated monthly average precipitation (mm)"
+                        }
+                    ],
+                    "description": "Climate station attributes"
+                },
+                {
+                    "name": "climate_stations",
+                    "value": [
+                        {
+                            "name": "station_id",
+                            "value": "325730",
+                            "description": "Climate station identification number"
+                        },
+                        {
+                            "name": "station_name",
+                            "value": "MC HENRY 5 N",
+                            "description": "Climate station name"
+                        },
+                        {
+                            "name": "lat",
+                            "value": 47.63,
+                            "description": "Climate station latitude"
+                        },
+                        {
+                            "name": "long",
+                            "value": -98.58,
+                            "description": "Climate station longitude"
+                        },
+                        {
+                            "name": "year_recorded",
+                            "value": 45,
+                            "description": "Number of years of recorded observations for climate station"
+                        },
+                        {
+                            "name": "elevation_ft",
+                            "value": 1510,
+                            "description": "Climate station elevation"
+                        },
+                        {
+                            "name": "avg_yearly_precip_mm",
+                            "value": 432.4,
+                            "description": "300 year average annual precipitation (mm)"
+                        },
+                        {
+                            "name": "jan_precip_mm",
+                            "value": 11.8,
+                            "description": "January estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "feb_precip_mm",
+                            "value": 8.9,
+                            "description": "February estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "mar_precip_mm",
+                            "value": 17.6,
+                            "description": "March estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "apr_precip_mm",
+                            "value": 28.9,
+                            "description": "April estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "may_precip_mm",
+                            "value": 52.9,
+                            "description": "May estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "jun_precip_mm",
+                            "value": 79.6,
+                            "description": "June estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "jul_precip_mm",
+                            "value": 67.7,
+                            "description": "July estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "aug_precip_mm",
+                            "value": 62.8,
+                            "description": "August estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "sep_precip_mm",
+                            "value": 45.5,
+                            "description": "September estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "oct_precip_mm",
+                            "value": 30.1,
+                            "description": "October estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "nov_precip_mm",
+                            "value": 14.9,
+                            "description": "November estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "dec_precip_mm",
+                            "value": 11.8,
+                            "description": "December estimated monthly average precipitation (mm)"
+                        }
+                    ],
+                    "description": "Climate station attributes"
+                },
+                {
+                    "name": "climate_stations",
+                    "value": [
+                        {
+                            "name": "station_id",
+                            "value": "325754",
+                            "description": "Climate station identification number"
+                        },
+                        {
+                            "name": "station_name",
+                            "value": "MC LEOD 3 E",
+                            "description": "Climate station name"
+                        },
+                        {
+                            "name": "lat",
+                            "value": 46.4,
+                            "description": "Climate station latitude"
+                        },
+                        {
+                            "name": "long",
+                            "value": -97.23,
+                            "description": "Climate station longitude"
+                        },
+                        {
+                            "name": "year_recorded",
+                            "value": 45,
+                            "description": "Number of years of recorded observations for climate station"
+                        },
+                        {
+                            "name": "elevation_ft",
+                            "value": 1080,
+                            "description": "Climate station elevation"
+                        },
+                        {
+                            "name": "avg_yearly_precip_mm",
+                            "value": 475.65,
+                            "description": "300 year average annual precipitation (mm)"
+                        },
+                        {
+                            "name": "jan_precip_mm",
+                            "value": 12.2,
+                            "description": "January estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "feb_precip_mm",
+                            "value": 9.9,
+                            "description": "February estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "mar_precip_mm",
+                            "value": 20.2,
+                            "description": "March estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "apr_precip_mm",
+                            "value": 33.6,
+                            "description": "April estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "may_precip_mm",
+                            "value": 63.3,
+                            "description": "May estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "jun_precip_mm",
+                            "value": 81.3,
+                            "description": "June estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "jul_precip_mm",
+                            "value": 79.7,
+                            "description": "July estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "aug_precip_mm",
+                            "value": 64.3,
+                            "description": "August estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "sep_precip_mm",
+                            "value": 44.6,
+                            "description": "September estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "oct_precip_mm",
+                            "value": 34.3,
+                            "description": "October estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "nov_precip_mm",
+                            "value": 19.4,
+                            "description": "November estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "dec_precip_mm",
+                            "value": 12.8,
+                            "description": "December estimated monthly average precipitation (mm)"
+                        }
+                    ],
+                    "description": "Climate station attributes"
+                },
+                {
+                    "name": "climate_stations",
+                    "value": [
+                        {
+                            "name": "station_id",
+                            "value": "326155",
+                            "description": "Climate station identification number"
+                        },
+                        {
+                            "name": "station_name",
+                            "value": "MOTT RR STATION",
+                            "description": "Climate station name"
+                        },
+                        {
+                            "name": "lat",
+                            "value": 46.37,
+                            "description": "Climate station latitude"
+                        },
+                        {
+                            "name": "long",
+                            "value": -102.33,
+                            "description": "Climate station longitude"
+                        },
+                        {
+                            "name": "year_recorded",
+                            "value": 45,
+                            "description": "Number of years of recorded observations for climate station"
+                        },
+                        {
+                            "name": "elevation_ft",
+                            "value": 2440,
+                            "description": "Climate station elevation"
+                        },
+                        {
+                            "name": "avg_yearly_precip_mm",
+                            "value": 397.66,
+                            "description": "300 year average annual precipitation (mm)"
+                        },
+                        {
+                            "name": "jan_precip_mm",
+                            "value": 9.1,
+                            "description": "January estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "feb_precip_mm",
+                            "value": 8.3,
+                            "description": "February estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "mar_precip_mm",
+                            "value": 16,
+                            "description": "March estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "apr_precip_mm",
+                            "value": 41.1,
+                            "description": "April estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "may_precip_mm",
+                            "value": 63.4,
+                            "description": "May estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "jun_precip_mm",
+                            "value": 88.6,
+                            "description": "June estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "jul_precip_mm",
+                            "value": 52.5,
+                            "description": "July estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "aug_precip_mm",
+                            "value": 43.5,
+                            "description": "August estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "sep_precip_mm",
+                            "value": 34.6,
+                            "description": "September estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "oct_precip_mm",
+                            "value": 20.1,
+                            "description": "October estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "nov_precip_mm",
+                            "value": 11.7,
+                            "description": "November estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "dec_precip_mm",
+                            "value": 8.8,
+                            "description": "December estimated monthly average precipitation (mm)"
+                        }
+                    ],
+                    "description": "Climate station attributes"
+                },
+                {
+                    "name": "climate_stations",
+                    "value": [
+                        {
+                            "name": "station_id",
+                            "value": "326255",
+                            "description": "Climate station identification number"
+                        },
+                        {
+                            "name": "station_name",
+                            "value": "NAPOLEON 2 SE",
+                            "description": "Climate station name"
+                        },
+                        {
+                            "name": "lat",
+                            "value": 46.47,
+                            "description": "Climate station latitude"
+                        },
+                        {
+                            "name": "long",
+                            "value": -99.72,
+                            "description": "Climate station longitude"
+                        },
+                        {
+                            "name": "year_recorded",
+                            "value": 92,
+                            "description": "Number of years of recorded observations for climate station"
+                        },
+                        {
+                            "name": "elevation_ft",
+                            "value": 1960,
+                            "description": "Climate station elevation"
+                        },
+                        {
+                            "name": "avg_yearly_precip_mm",
+                            "value": 425.51,
+                            "description": "300 year average annual precipitation (mm)"
+                        },
+                        {
+                            "name": "jan_precip_mm",
+                            "value": 10.7,
+                            "description": "January estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "feb_precip_mm",
+                            "value": 9.9,
+                            "description": "February estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "mar_precip_mm",
+                            "value": 21.7,
+                            "description": "March estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "apr_precip_mm",
+                            "value": 36.2,
+                            "description": "April estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "may_precip_mm",
+                            "value": 57.7,
+                            "description": "May estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "jun_precip_mm",
+                            "value": 82.1,
+                            "description": "June estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "jul_precip_mm",
+                            "value": 66.8,
+                            "description": "July estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "aug_precip_mm",
+                            "value": 49.1,
+                            "description": "August estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "sep_precip_mm",
+                            "value": 38.7,
+                            "description": "September estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "oct_precip_mm",
+                            "value": 27.4,
+                            "description": "October estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "nov_precip_mm",
+                            "value": 14.8,
+                            "description": "November estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "dec_precip_mm",
+                            "value": 10.5,
+                            "description": "December estimated monthly average precipitation (mm)"
+                        }
+                    ],
+                    "description": "Climate station attributes"
+                },
+                {
+                    "name": "climate_stations",
+                    "value": [
+                        {
+                            "name": "station_id",
+                            "value": "327047",
+                            "description": "Climate station identification number"
+                        },
+                        {
+                            "name": "station_name",
+                            "value": "PETTIBONE",
+                            "description": "Climate station name"
+                        },
+                        {
+                            "name": "lat",
+                            "value": 47.12,
+                            "description": "Climate station latitude"
+                        },
+                        {
+                            "name": "long",
+                            "value": -99.52,
+                            "description": "Climate station longitude"
+                        },
+                        {
+                            "name": "year_recorded",
+                            "value": 45,
+                            "description": "Number of years of recorded observations for climate station"
+                        },
+                        {
+                            "name": "elevation_ft",
+                            "value": 1860,
+                            "description": "Climate station elevation"
+                        },
+                        {
+                            "name": "avg_yearly_precip_mm",
+                            "value": 421.55,
+                            "description": "300 year average annual precipitation (mm)"
+                        },
+                        {
+                            "name": "jan_precip_mm",
+                            "value": 11.2,
+                            "description": "January estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "feb_precip_mm",
+                            "value": 8.7,
+                            "description": "February estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "mar_precip_mm",
+                            "value": 14.2,
+                            "description": "March estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "apr_precip_mm",
+                            "value": 34.1,
+                            "description": "April estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "may_precip_mm",
+                            "value": 58,
+                            "description": "May estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "jun_precip_mm",
+                            "value": 85.6,
+                            "description": "June estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "jul_precip_mm",
+                            "value": 62.8,
+                            "description": "July estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "aug_precip_mm",
+                            "value": 51,
+                            "description": "August estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "sep_precip_mm",
+                            "value": 43.9,
+                            "description": "September estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "oct_precip_mm",
+                            "value": 28.9,
+                            "description": "October estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "nov_precip_mm",
+                            "value": 12.3,
+                            "description": "November estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "dec_precip_mm",
+                            "value": 10.6,
+                            "description": "December estimated monthly average precipitation (mm)"
+                        }
+                    ],
+                    "description": "Climate station attributes"
+                },
+                {
+                    "name": "climate_stations",
+                    "value": [
+                        {
+                            "name": "station_id",
+                            "value": "327281",
+                            "description": "Climate station identification number"
+                        },
+                        {
+                            "name": "station_name",
+                            "value": "POWERS LAKE",
+                            "description": "Climate station name"
+                        },
+                        {
+                            "name": "lat",
+                            "value": 48.57,
+                            "description": "Climate station latitude"
+                        },
+                        {
+                            "name": "long",
+                            "value": -102.65,
+                            "description": "Climate station longitude"
+                        },
+                        {
+                            "name": "year_recorded",
+                            "value": 45,
+                            "description": "Number of years of recorded observations for climate station"
+                        },
+                        {
+                            "name": "elevation_ft",
+                            "value": 2210,
+                            "description": "Climate station elevation"
+                        },
+                        {
+                            "name": "avg_yearly_precip_mm",
+                            "value": 356.63,
+                            "description": "300 year average annual precipitation (mm)"
+                        },
+                        {
+                            "name": "jan_precip_mm",
+                            "value": 8.2,
+                            "description": "January estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "feb_precip_mm",
+                            "value": 6.8,
+                            "description": "February estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "mar_precip_mm",
+                            "value": 11.1,
+                            "description": "March estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "apr_precip_mm",
+                            "value": 29.9,
+                            "description": "April estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "may_precip_mm",
+                            "value": 46.8,
+                            "description": "May estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "jun_precip_mm",
+                            "value": 70.7,
+                            "description": "June estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "jul_precip_mm",
+                            "value": 58.5,
+                            "description": "July estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "aug_precip_mm",
+                            "value": 45.7,
+                            "description": "August estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "sep_precip_mm",
+                            "value": 41.9,
+                            "description": "September estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "oct_precip_mm",
+                            "value": 17.6,
+                            "description": "October estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "nov_precip_mm",
+                            "value": 10.8,
+                            "description": "November estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "dec_precip_mm",
+                            "value": 8.4,
+                            "description": "December estimated monthly average precipitation (mm)"
+                        }
+                    ],
+                    "description": "Climate station attributes"
+                },
+                {
+                    "name": "climate_stations",
+                    "value": [
+                        {
+                            "name": "station_id",
+                            "value": "328872",
+                            "description": "Climate station identification number"
+                        },
+                        {
+                            "name": "station_name",
+                            "value": "UNDERWOOD",
+                            "description": "Climate station name"
+                        },
+                        {
+                            "name": "lat",
+                            "value": 47.45,
+                            "description": "Climate station latitude"
+                        },
+                        {
+                            "name": "long",
+                            "value": -101.13,
+                            "description": "Climate station longitude"
+                        },
+                        {
+                            "name": "year_recorded",
+                            "value": 38,
+                            "description": "Number of years of recorded observations for climate station"
+                        },
+                        {
+                            "name": "elevation_ft",
+                            "value": 2020,
+                            "description": "Climate station elevation"
+                        },
+                        {
+                            "name": "avg_yearly_precip_mm",
+                            "value": 423.02,
+                            "description": "300 year average annual precipitation (mm)"
+                        },
+                        {
+                            "name": "jan_precip_mm",
+                            "value": 12.8,
+                            "description": "January estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "feb_precip_mm",
+                            "value": 10.3,
+                            "description": "February estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "mar_precip_mm",
+                            "value": 14.6,
+                            "description": "March estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "apr_precip_mm",
+                            "value": 41.4,
+                            "description": "April estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "may_precip_mm",
+                            "value": 54.6,
+                            "description": "May estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "jun_precip_mm",
+                            "value": 90.8,
+                            "description": "June estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "jul_precip_mm",
+                            "value": 65.4,
+                            "description": "July estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "aug_precip_mm",
+                            "value": 48.5,
+                            "description": "August estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "sep_precip_mm",
+                            "value": 39.4,
+                            "description": "September estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "oct_precip_mm",
+                            "value": 19.6,
+                            "description": "October estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "nov_precip_mm",
+                            "value": 12.8,
+                            "description": "November estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "dec_precip_mm",
+                            "value": 12.9,
+                            "description": "December estimated monthly average precipitation (mm)"
+                        }
+                    ],
+                    "description": "Climate station attributes"
+                },
+                {
+                    "name": "climate_stations",
+                    "value": [
+                        {
+                            "name": "station_id",
+                            "value": "328913",
+                            "description": "Climate station identification number"
+                        },
+                        {
+                            "name": "station_name",
+                            "value": "UPHAM WILDLIFE REF",
+                            "description": "Climate station name"
+                        },
+                        {
+                            "name": "lat",
+                            "value": 48.62,
+                            "description": "Climate station latitude"
+                        },
+                        {
+                            "name": "long",
+                            "value": -100.73,
+                            "description": "Climate station longitude"
+                        },
+                        {
+                            "name": "year_recorded",
+                            "value": 45,
+                            "description": "Number of years of recorded observations for climate station"
+                        },
+                        {
+                            "name": "elevation_ft",
+                            "value": 1430,
+                            "description": "Climate station elevation"
+                        },
+                        {
+                            "name": "avg_yearly_precip_mm",
+                            "value": 399.7,
+                            "description": "300 year average annual precipitation (mm)"
+                        },
+                        {
+                            "name": "jan_precip_mm",
+                            "value": 12.4,
+                            "description": "January estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "feb_precip_mm",
+                            "value": 9,
+                            "description": "February estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "mar_precip_mm",
+                            "value": 13.5,
+                            "description": "March estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "apr_precip_mm",
+                            "value": 31.1,
+                            "description": "April estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "may_precip_mm",
+                            "value": 51.9,
+                            "description": "May estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "jun_precip_mm",
+                            "value": 79.5,
+                            "description": "June estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "jul_precip_mm",
+                            "value": 57,
+                            "description": "July estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "aug_precip_mm",
+                            "value": 53.7,
+                            "description": "August estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "sep_precip_mm",
+                            "value": 40.1,
+                            "description": "September estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "oct_precip_mm",
+                            "value": 24.9,
+                            "description": "October estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "nov_precip_mm",
+                            "value": 13.9,
+                            "description": "November estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "dec_precip_mm",
+                            "value": 12.8,
+                            "description": "December estimated monthly average precipitation (mm)"
+                        }
+                    ],
+                    "description": "Climate station attributes"
+                },
+                {
+                    "name": "climate_stations",
+                    "value": [
+                        {
+                            "name": "station_id",
+                            "value": "328937",
+                            "description": "Climate station identification number"
+                        },
+                        {
+                            "name": "station_name",
+                            "value": "VALLEY CITY",
+                            "description": "Climate station name"
+                        },
+                        {
+                            "name": "lat",
+                            "value": 46.92,
+                            "description": "Climate station latitude"
+                        },
+                        {
+                            "name": "long",
+                            "value": -98,
+                            "description": "Climate station longitude"
+                        },
+                        {
+                            "name": "year_recorded",
+                            "value": 45,
+                            "description": "Number of years of recorded observations for climate station"
+                        },
+                        {
+                            "name": "elevation_ft",
+                            "value": 1230,
+                            "description": "Climate station elevation"
+                        },
+                        {
+                            "name": "avg_yearly_precip_mm",
+                            "value": 484.02,
+                            "description": "300 year average annual precipitation (mm)"
+                        },
+                        {
+                            "name": "jan_precip_mm",
+                            "value": 12.1,
+                            "description": "January estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "feb_precip_mm",
+                            "value": 9.4,
+                            "description": "February estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "mar_precip_mm",
+                            "value": 33.9,
+                            "description": "March estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "apr_precip_mm",
+                            "value": 39.1,
+                            "description": "April estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "may_precip_mm",
+                            "value": 63,
+                            "description": "May estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "jun_precip_mm",
+                            "value": 87.9,
+                            "description": "June estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "jul_precip_mm",
+                            "value": 74.9,
+                            "description": "July estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "aug_precip_mm",
+                            "value": 58.3,
+                            "description": "August estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "sep_precip_mm",
+                            "value": 46.8,
+                            "description": "September estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "oct_precip_mm",
+                            "value": 30.8,
+                            "description": "October estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "nov_precip_mm",
+                            "value": 15.8,
+                            "description": "November estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "dec_precip_mm",
+                            "value": 11.9,
+                            "description": "December estimated monthly average precipitation (mm)"
+                        }
+                    ],
+                    "description": "Climate station attributes"
+                },
+                {
+                    "name": "climate_stations",
+                    "value": [
+                        {
+                            "name": "station_id",
+                            "value": "329246",
+                            "description": "Climate station identification number"
+                        },
+                        {
+                            "name": "station_name",
+                            "value": "WATFORD CITY 20 SE",
+                            "description": "Climate station name"
+                        },
+                        {
+                            "name": "lat",
+                            "value": 47.58,
+                            "description": "Climate station latitude"
+                        },
+                        {
+                            "name": "long",
+                            "value": -103.12,
+                            "description": "Climate station longitude"
+                        },
+                        {
+                            "name": "year_recorded",
+                            "value": 42,
+                            "description": "Number of years of recorded observations for climate station"
+                        },
+                        {
+                            "name": "elevation_ft",
+                            "value": 1970,
+                            "description": "Climate station elevation"
+                        },
+                        {
+                            "name": "avg_yearly_precip_mm",
+                            "value": 359.74,
+                            "description": "300 year average annual precipitation (mm)"
+                        },
+                        {
+                            "name": "jan_precip_mm",
+                            "value": 8.9,
+                            "description": "January estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "feb_precip_mm",
+                            "value": 7.6,
+                            "description": "February estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "mar_precip_mm",
+                            "value": 13.7,
+                            "description": "March estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "apr_precip_mm",
+                            "value": 36.1,
+                            "description": "April estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "may_precip_mm",
+                            "value": 48.2,
+                            "description": "May estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "jun_precip_mm",
+                            "value": 71,
+                            "description": "June estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "jul_precip_mm",
+                            "value": 51.5,
+                            "description": "July estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "aug_precip_mm",
+                            "value": 40.9,
+                            "description": "August estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "sep_precip_mm",
+                            "value": 38.9,
+                            "description": "September estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "oct_precip_mm",
+                            "value": 21.9,
+                            "description": "October estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "nov_precip_mm",
+                            "value": 11.2,
+                            "description": "November estimated monthly average precipitation (mm)"
+                        },
+                        {
+                            "name": "dec_precip_mm",
+                            "value": 9.8,
+                            "description": "December estimated monthly average precipitation (mm)"
+                        }
+                    ],
+                    "description": "Climate station attributes"
+                }
+            ],
+            "description": "Climate Station List"
+        }
+    ]
+}

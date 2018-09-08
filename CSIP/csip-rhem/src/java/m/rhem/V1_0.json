@@ -1,0 +1,87 @@
+{
+    "metainfo": {
+        "request-results": [
+            "SLOPE_DELIVERY",
+            "SLOPE_T_VALUE",
+            "SLOPE_DEGRAD"
+        ]
+    },
+    "parameter": [
+        {
+            "name": "latitude",
+            "description": "Location latitude, continental US range. For climate lookup",
+            "unit": "deg",
+            "min": "25",
+            "max": "50",
+            "value": 41.19295
+        },
+        {
+            "name": "longitude",
+            "description": "Location longitude, continental US range. For climate lookup",
+            "unit": "deg",
+            "min": "-124",
+            "max": "-66",
+            "value": -94.43229
+        },
+	{
+            "name": "aspect",
+            "description": "Aspect direction of slope face",
+            "unit": "degrees",
+            "min": "0",
+            "max": "360",
+            "value": 180
+        },
+	{
+            "name": "width",
+            "description": "Slope profile width",
+            "unit": "ft",
+            "min": "1",
+            "max": "1000",
+            "value": 75.5
+        },
+        {
+            "name": "topo_steepness",
+            "description": "Slope steepness for each segment.",
+            "unit": "%",
+            "min": "0.001",
+            "max": "100",
+            "value": [3,9,15]
+        },
+	{
+            "name": "topo_length",
+            "description": "Slope length for each segment.",
+            "unit": "ft",
+            "min": "0.001",
+            "max": "1000",
+            "value": [30,120]
+        },
+        {
+            "name": "soilPtr",
+            "description": "soil (arrayed). String keys returned from CSIP soil service. Corresponds to R2:SOIL_PTR.",
+            "value": [
+		"164156:242697",
+                "164327:242756"
+            ]
+        },
+	{
+	    "name": "soil_length",
+            "description" : "soil segment lengths arrayed",
+	    "unit": "ft",
+            "value" : [100,50]
+        },
+	{
+            "name": "managementPtr",
+            "description": "management description, from LMOD query or constructed in URB editor.",
+            "value": [
+                 "1317771957384757296",
+		 "1317771957384757815"
+            ]
+        },
+	{
+	    "name": "mgmt_length",
+            "description" : "management segment lengths arrayed",
+	    "unit": "ft",
+            "value" : [75,75]
+        }
+     ]   
+}

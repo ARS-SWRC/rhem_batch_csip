@@ -1,0 +1,126 @@
+{
+    "metainfo": {
+        "status": "Finished",
+        "suid": "db9ca832-8c09-11e6-b281-7f611839ebd6",
+        "cloud_node": "10.84.67.48",
+        "tstamp": "2016-10-06 15:14:24",
+        "service_url": "http://localhost:8080/csip-rhem/m/rhem/getslopeshapes/1.0",
+        "request_ip": "0:0:0:0:0:0:0:1",
+        "csip.version": "$version: 0.0.0 xxxxxxx date, built at 2016-10-06 15:13 by rumpal$",
+        "cpu_time": 943,
+        "expiration_date": "2016-10-06 15:19:25"
+    },
+    "parameter": [],
+    "result": [
+        {
+            "name": "choice_lists",
+            "value": [
+                {
+                    "name": "slope_shape",
+                    "value": [
+                        {
+                            "name": "choice_id",
+                            "value": 1,
+                            "description": "Choice Identifier"
+                        },
+                        {
+                            "name": "choice_kind",
+                            "value": "slope shape",
+                            "description": "Choice Kind"
+                        },
+                        {
+                            "name": "choice_sequence",
+                            "value": 1,
+                            "description": "Choice Sequence"
+                        },
+                        {
+                            "name": "choice_label",
+                            "value": "Uniform",
+                            "description": "Choice Label"
+                        }
+                    ],
+                    "description": "Slope Shape"
+                },
+                {
+                    "name": "slope_shape",
+                    "value": [
+                        {
+                            "name": "choice_id",
+                            "value": 2,
+                            "description": "Choice Identifier"
+                        },
+                        {
+                            "name": "choice_kind",
+                            "value": "slope shape",
+                            "description": "Choice Kind"
+                        },
+                        {
+                            "name": "choice_sequence",
+                            "value": 2,
+                            "description": "Choice Sequence"
+                        },
+                        {
+                            "name": "choice_label",
+                            "value": "Convex",
+                            "description": "Choice Label"
+                        }
+                    ],
+                    "description": "Slope Shape"
+                },
+                {
+                    "name": "slope_shape",
+                    "value": [
+                        {
+                            "name": "choice_id",
+                            "value": 3,
+                            "description": "Choice Identifier"
+                        },
+                        {
+                            "name": "choice_kind",
+                            "value": "slope shape",
+                            "description": "Choice Kind"
+                        },
+                        {
+                            "name": "choice_sequence",
+                            "value": 3,
+                            "description": "Choice Sequence"
+                        },
+                        {
+                            "name": "choice_label",
+                            "value": "Concave",
+                            "description": "Choice Label"
+                        }
+                    ],
+                    "description": "Slope Shape"
+                },
+                {
+                    "name": "slope_shape",
+                    "value": [
+                        {
+                            "name": "choice_id",
+                            "value": 4,
+                            "description": "Choice Identifier"
+                        },
+                        {
+                            "name": "choice_kind",
+                            "value": "slope shape",
+                            "description": "Choice Kind"
+                        },
+                        {
+                            "name": "choice_sequence",
+                            "value": 4,
+                            "description": "Choice Sequence"
+                        },
+                        {
+                            "name": "choice_label",
+                            "value": "S-Shaped",
+                            "description": "Choice Label"
+                        }
+                    ],
+                    "description": "Slope Shape"
+                }
+            ],
+            "description": "Slope Shape Choice List"
+        }
+    ]
+}

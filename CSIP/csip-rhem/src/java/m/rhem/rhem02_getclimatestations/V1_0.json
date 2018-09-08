@@ -1,0 +1,10 @@
+{
+    "metainfo": {},
+    "parameter": [
+        {
+            "name": "stateid",
+            "description": "State abbreviation of climate station location",
+            "value": "CO"
+        }
+    ]
+}

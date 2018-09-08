@@ -1,0 +1,394 @@
+{
+    "metainfo": {
+        "status": "Finished",
+        "suid": "f25857ff-8cd4-11e6-b617-fb6bc4c4e500",
+        "cloud_node": "10.84.69.107",
+        "tstamp": "2016-10-07 15:28:10",
+        "service_url": "http://localhost:8080/csip-rhem/m/rhem/getsurftexclasses/1.0",
+        "request_ip": "0:0:0:0:0:0:0:1",
+        "csip.version": "$version: 0.0.0 xxxxxxx date, built at 2016-10-07 15:26 by rumpal$",
+        "cpu_time": 1925,
+        "expiration_date": "2016-10-07 15:33:12"
+    },
+    "parameter": [],
+    "result": [
+        {
+            "name": "choice_lists",
+            "value": [
+                {
+                    "name": "surface_texture_classes",
+                    "value": [
+                        {
+                            "name": "choice_id",
+                            "value": 1,
+                            "description": "Choice Identifier"
+                        },
+                        {
+                            "name": "choice_kind",
+                            "value": "texture class",
+                            "description": "Choice Kind"
+                        },
+                        {
+                            "name": "choice_sequence",
+                            "value": 1,
+                            "description": "Choice Sequence"
+                        },
+                        {
+                            "name": "choice_data_entry_text",
+                            "value": "s",
+                            "description": "Choice Data Text Entry"
+                        },
+                        {
+                            "name": "choice_label",
+                            "value": "Sand",
+                            "description": "Choice Label"
+                        }
+                    ],
+                    "description": "Surface Texture Classes Choice List"
+                },
+                {
+                    "name": "surface_texture_classes",
+                    "value": [
+                        {
+                            "name": "choice_id",
+                            "value": 2,
+                            "description": "Choice Identifier"
+                        },
+                        {
+                            "name": "choice_kind",
+                            "value": "texture class",
+                            "description": "Choice Kind"
+                        },
+                        {
+                            "name": "choice_sequence",
+                            "value": 2,
+                            "description": "Choice Sequence"
+                        },
+                        {
+                            "name": "choice_data_entry_text",
+                            "value": "ls",
+                            "description": "Choice Data Text Entry"
+                        },
+                        {
+                            "name": "choice_label",
+                            "value": "Loamy sand",
+                            "description": "Choice Label"
+                        }
+                    ],
+                    "description": "Surface Texture Classes Choice List"
+                },
+                {
+                    "name": "surface_texture_classes",
+                    "value": [
+                        {
+                            "name": "choice_id",
+                            "value": 3,
+                            "description": "Choice Identifier"
+                        },
+                        {
+                            "name": "choice_kind",
+                            "value": "texture class",
+                            "description": "Choice Kind"
+                        },
+                        {
+                            "name": "choice_sequence",
+                            "value": 3,
+                            "description": "Choice Sequence"
+                        },
+                        {
+                            "name": "choice_data_entry_text",
+                            "value": "sl",
+                            "description": "Choice Data Text Entry"
+                        },
+                        {
+                            "name": "choice_label",
+                            "value": "Sandy loam",
+                            "description": "Choice Label"
+                        }
+                    ],
+                    "description": "Surface Texture Classes Choice List"
+                },
+                {
+                    "name": "surface_texture_classes",
+                    "value": [
+                        {
+                            "name": "choice_id",
+                            "value": 4,
+                            "description": "Choice Identifier"
+                        },
+                        {
+                            "name": "choice_kind",
+                            "value": "texture class",
+                            "description": "Choice Kind"
+                        },
+                        {
+                            "name": "choice_sequence",
+                            "value": 4,
+                            "description": "Choice Sequence"
+                        },
+                        {
+                            "name": "choice_data_entry_text",
+                            "value": "l",
+                            "description": "Choice Data Text Entry"
+                        },
+                        {
+                            "name": "choice_label",
+                            "value": "Loam",
+                            "description": "Choice Label"
+                        }
+                    ],
+                    "description": "Surface Texture Classes Choice List"
+                },
+                {
+                    "name": "surface_texture_classes",
+                    "value": [
+                        {
+                            "name": "choice_id",
+                            "value": 5,
+                            "description": "Choice Identifier"
+                        },
+                        {
+                            "name": "choice_kind",
+                            "value": "texture class",
+                            "description": "Choice Kind"
+                        },
+                        {
+                            "name": "choice_sequence",
+                            "value": 5,
+                            "description": "Choice Sequence"
+                        },
+                        {
+                            "name": "choice_data_entry_text",
+                            "value": "sil",
+                            "description": "Choice Data Text Entry"
+                        },
+                        {
+                            "name": "choice_label",
+                            "value": "Silt loam",
+                            "description": "Choice Label"
+                        }
+                    ],
+                    "description": "Surface Texture Classes Choice List"
+                },
+                {
+                    "name": "surface_texture_classes",
+                    "value": [
+                        {
+                            "name": "choice_id",
+                            "value": 6,
+                            "description": "Choice Identifier"
+                        },
+                        {
+                            "name": "choice_kind",
+                            "value": "texture class",
+                            "description": "Choice Kind"
+                        },
+                        {
+                            "name": "choice_sequence",
+                            "value": 6,
+                            "description": "Choice Sequence"
+                        },
+                        {
+                            "name": "choice_data_entry_text",
+                            "value": "si",
+                            "description": "Choice Data Text Entry"
+                        },
+                        {
+                            "name": "choice_label",
+                            "value": "Silt",
+                            "description": "Choice Label"
+                        }
+                    ],
+                    "description": "Surface Texture Classes Choice List"
+                },
+                {
+                    "name": "surface_texture_classes",
+                    "value": [
+                        {
+                            "name": "choice_id",
+                            "value": 7,
+                            "description": "Choice Identifier"
+                        },
+                        {
+                            "name": "choice_kind",
+                            "value": "texture class",
+                            "description": "Choice Kind"
+                        },
+                        {
+                            "name": "choice_sequence",
+                            "value": 7,
+                            "description": "Choice Sequence"
+                        },
+                        {
+                            "name": "choice_data_entry_text",
+                            "value": "scl",
+                            "description": "Choice Data Text Entry"
+                        },
+                        {
+                            "name": "choice_label",
+                            "value": "Sandy clay loam",
+                            "description": "Choice Label"
+                        }
+                    ],
+                    "description": "Surface Texture Classes Choice List"
+                },
+                {
+                    "name": "surface_texture_classes",
+                    "value": [
+                        {
+                            "name": "choice_id",
+                            "value": 8,
+                            "description": "Choice Identifier"
+                        },
+                        {
+                            "name": "choice_kind",
+                            "value": "texture class",
+                            "description": "Choice Kind"
+                        },
+                        {
+                            "name": "choice_sequence",
+                            "value": 8,
+                            "description": "Choice Sequence"
+                        },
+                        {
+                            "name": "choice_data_entry_text",
+                            "value": "cl",
+                            "description": "Choice Data Text Entry"
+                        },
+                        {
+                            "name": "choice_label",
+                            "value": "Clay loam",
+                            "description": "Choice Label"
+                        }
+                    ],
+                    "description": "Surface Texture Classes Choice List"
+                },
+                {
+                    "name": "surface_texture_classes",
+                    "value": [
+                        {
+                            "name": "choice_id",
+                            "value": 9,
+                            "description": "Choice Identifier"
+                        },
+                        {
+                            "name": "choice_kind",
+                            "value": "texture class",
+                            "description": "Choice Kind"
+                        },
+                        {
+                            "name": "choice_sequence",
+                            "value": 9,
+                            "description": "Choice Sequence"
+                        },
+                        {
+                            "name": "choice_data_entry_text",
+                            "value": "sicl",
+                            "description": "Choice Data Text Entry"
+                        },
+                        {
+                            "name": "choice_label",
+                            "value": "Silty clay loam",
+                            "description": "Choice Label"
+                        }
+                    ],
+                    "description": "Surface Texture Classes Choice List"
+                },
+                {
+                    "name": "surface_texture_classes",
+                    "value": [
+                        {
+                            "name": "choice_id",
+                            "value": 10,
+                            "description": "Choice Identifier"
+                        },
+                        {
+                            "name": "choice_kind",
+                            "value": "texture class",
+                            "description": "Choice Kind"
+                        },
+                        {
+                            "name": "choice_sequence",
+                            "value": 10,
+                            "description": "Choice Sequence"
+                        },
+                        {
+                            "name": "choice_data_entry_text",
+                            "value": "sc",
+                            "description": "Choice Data Text Entry"
+                        },
+                        {
+                            "name": "choice_label",
+                            "value": "Sandy clay",
+                            "description": "Choice Label"
+                        }
+                    ],
+                    "description": "Surface Texture Classes Choice List"
+                },
+                {
+                    "name": "surface_texture_classes",
+                    "value": [
+                        {
+                            "name": "choice_id",
+                            "value": 11,
+                            "description": "Choice Identifier"
+                        },
+                        {
+                            "name": "choice_kind",
+                            "value": "texture class",
+                            "description": "Choice Kind"
+                        },
+                        {
+                            "name": "choice_sequence",
+                            "value": 11,
+                            "description": "Choice Sequence"
+                        },
+                        {
+                            "name": "choice_data_entry_text",
+                            "value": "sic",
+                            "description": "Choice Data Text Entry"
+                        },
+                        {
+                            "name": "choice_label",
+                            "value": "Silty clay",
+                            "description": "Choice Label"
+                        }
+                    ],
+                    "description": "Surface Texture Classes Choice List"
+                },
+                {
+                    "name": "surface_texture_classes",
+                    "value": [
+                        {
+                            "name": "choice_id",
+                            "value": 12,
+                            "description": "Choice Identifier"
+                        },
+                        {
+                            "name": "choice_kind",
+                            "value": "texture class",
+                            "description": "Choice Kind"
+                        },
+                        {
+                            "name": "choice_sequence",
+                            "value": 12,
+                            "description": "Choice Sequence"
+                        },
+                        {
+                            "name": "choice_data_entry_text",
+                            "value": "c",
+                            "description": "Choice Data Text Entry"
+                        },
+                        {
+                            "name": "choice_label",
+                            "value": "Clay",
+                            "description": "Choice Label"
+                        }
+                    ],
+                    "description": "Surface Texture Classes Choice List"
+                }
+            ],
+            "description": "List"
+        }
+    ]
+}

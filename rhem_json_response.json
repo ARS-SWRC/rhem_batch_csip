@@ -1,0 +1,234 @@
+{
+    "parameter": [
+        {
+            "value": 4,
+            "name": "AoAID",
+            "description": "Area of Analysis Identifier"
+        },
+        {
+            "value": 2,
+            "name": "rhem_site_id",
+            "description": "RHEM Evaluation Site Identifier"
+        },
+        {
+            "value": "SR5",
+            "name": "scenarioname",
+            "description": "RHEM Scenario Name"
+        },
+        {
+            "value": "",
+            "name": "scenariodescription",
+            "description": "RHEM Scenario description"
+        },
+        {
+            "value": 1,
+            "name": "units",
+            "description": "RHEM Scenario Unit of Measure, 1 = metric and 2 = English"
+        },
+        {
+            "value": "AZ",
+            "name": "stateid",
+            "description": " State Abbreviation"
+        },
+        {
+            "value": "021231",
+            "name": "climatestationid",
+            "description": "Climate Station Identification Number"
+        },
+        {
+            "value": "Sandy Loam",
+            "name": "soiltexture",
+            "description": "Surface Soil Texture Class Label"
+        },
+        {
+            "value": 25,
+            "name": "moisturecontent",
+            "description": ""
+        },
+        {
+            "value": 50,
+            "unit": "ft/m",
+            "description": "Slope Length",
+            "max": "394 feet/120 meters",
+            "min": 0.01,
+            "name": "slopelength"
+        },
+        {
+            "value": "Uniform",
+            "name": "slopeshape",
+            "description": "Slope Shape"
+        },
+        {
+            "value": 6,
+            "unit": "%",
+            "description": "Slope Steepness",
+            "max": 100,
+            "min": 0.01,
+            "name": "slopesteepness"
+        },
+        {
+            "value": 55,
+            "unit": "%",
+            "description": "Bunchgrass Foliar Cover Percent",
+            "max": 100,
+            "min": 0.01,
+            "name": "bunchgrasscanopycover"
+        },
+        {
+            "value": 16,
+            "unit": "%",
+            "description": "Forbs and Annuals Foliar Cover Percent",
+            "max": 100,
+            "min": 0.01,
+            "name": "forbscanopycover"
+        },
+        {
+            "value": 0,
+            "unit": "%",
+            "description": "Shrub Foliar Cover Percent",
+            "max": 100,
+            "min": 0.01,
+            "name": "shrubscanopycover"
+        },
+        {
+            "value": 0,
+            "unit": "%",
+            "description": "Sodgrass Foliar Cover Percent",
+            "max": 100,
+            "min": 0.01,
+            "name": "sodgrasscanopycover"
+        },
+        {
+            "value": 3,
+            "unit": "%",
+            "description": "Plant Basal Cover Percent",
+            "max": 100,
+            "min": 0.01,
+            "name": "basalcover"
+        },
+        {
+            "value": 1,
+            "unit": "%",
+            "description": "Rock Cover Percent",
+            "max": 100,
+            "min": 0.01,
+            "name": "rockcover"
+        },
+        {
+            "value": 90,
+            "unit": "%",
+            "description": "Litter Cover Percent",
+            "max": 100,
+            "min": 0.01,
+            "name": "littercover"
+        },
+        {
+            "value": 0,
+            "Description": "Cryptogam Cover Percent",
+            "max": 100,
+            "unit": "%",
+            "min": 0.01,
+            "name": "cryptogamscover"
+        }
+    ],
+    "metainfo": {
+        "cloud_node": "10.1.71.30",
+        "csip-rhem.version": "$version: 2.0.9 d13d6205541b 2018-08-06 rumpal, built at 2018-08-06 10:49 by jenkins$",
+        "tstamp": "2018-08-08 13:51:22",
+        "suid": "6d4a7ee7-9b44-11e8-8451-09898224eb95",
+        "csip.version": "$version: 2.2.20 54d149e488ca 2018-08-03 od, built at 2018-08-06 10:48 by jenkins$",
+        "service_url": "http://csip.engr.colostate.edu:8083/csip-rhem/m/rhem/runrhem/1.0",
+        "expiration_date": "2018-08-08 13:56:35",
+        "request_ip": "198.22.133.211",
+        "cpu_time": 12506,
+        "status": "Finished"
+    },
+    "result": [
+        {
+            "value": 4,
+            "name": "AoAID",
+            "description": "Area of Analysis Identifier"
+        },
+        {
+            "value": 2,
+            "name": "rhem_site_id",
+            "description": "RHEM Evaluation Site Identifier"
+        },
+        {
+            "value": "125.0",
+            "name": "CLEN"
+        },
+        {
+            "value": "metric",
+            "name": "UNITS"
+        },
+        {
+            "value": "0.002 0.01 0.03 0.3 0.2",
+            "name": "DIAMS"
+        },
+        {
+            "value": "2.6 2.65 1.8 1.6 2.65",
+            "name": "DENSITY"
+        },
+        {
+            "value": "1.8607928616056089",
+            "name": "CHEZY"
+        },
+        {
+            "value": "1.8607928616056089",
+            "name": "RCHEZY"
+        },
+        {
+            "value": "0.06, 0.06",
+            "name": "SL"
+        },
+        {
+            "value": "0.0, 1.0",
+            "name": "SX"
+        },
+        {
+            "value": "529.5124616209459",
+            "name": "KSS"
+        },
+        {
+            "value": "14.7495697435874",
+            "name": "KE"
+        },
+        {
+            "value": "130.0",
+            "name": "G"
+        },
+        {
+            "value": "0.38",
+            "name": "DIST"
+        },
+        {
+            "value": "0.4306",
+            "name": "POR"
+        },
+        {
+            "value": "0.0325 0.0542 0.1801 0.3939 0.3394",
+            "name": "FRACT"
+        },
+        {
+            "value": "http://csip.engr.colostate.edu:8083/csip-rhem/q/6d4a7ee7-9b44-11e8-8451-09898224eb95/scenario_input_SR5.par",
+            "name": "scenario_input_SR5.par",
+            "description": "Parameter inputfile"
+        },
+        {
+            "value": "http://csip.engr.colostate.edu:8083/csip-rhem/q/6d4a7ee7-9b44-11e8-8451-09898224eb95/storm_input_SR5.pre",
+            "name": "storm_input_SR5.pre",
+            "description": "Storm input file"
+        },
+        {
+            "value": "http://csip.engr.colostate.edu:8083/csip-rhem/q/6d4a7ee7-9b44-11e8-8451-09898224eb95/scenario_output_summary_SR5.sum",
+            "name": "scenario_output_summary_SR5.sum",
+            "description": "Summary file"
+        },
+        {
+            "value": "http://csip.engr.colostate.edu:8083/csip-rhem/q/6d4a7ee7-9b44-11e8-8451-09898224eb95/scenario_output_summary_SR5.out",
+            "name": "scenario_output_summary_SR5.out",
+            "description": "Detailed"
+        }
+    ]
+}

@@ -1,0 +1,223 @@
+{
+    "metainfo": {
+        "status": "Finished",
+        "suid": "3fbbfff2-8f11-11e6-85ac-7d60b0df5ddc",
+        "cloud_node": "10.84.68.45",
+        "tstamp": "2016-10-10 11:44:52",
+        "service_url": "http://localhost:8080/csip-rhem/m/rhem/runrhem/1.0",
+        "request_ip": "0:0:0:0:0:0:0:1",
+        "csip.version": "$version: 0.0.0 xxxxxxx date, built at 2016-10-10 11:44 by rumpal$",
+        "cpu_time": 161506,
+        "expiration_date": "2016-10-10 11:52:34"
+    },
+    "parameter": [
+        {
+            "name": "AoAID",
+            "description": "Area of Analysis Identifier",
+            "value": 3
+        },
+        {
+            "name": "rhem_site_id",
+            "description": "RHEM Evaluation Site Identifier",
+            "value": 1
+        },
+        {
+            "name": "scenarioname",
+            "description": "RHEM Scenario Name",
+            "value": "Marfa-test-2-v-2.3"
+        },
+        {
+            "name": "scenariodescription",
+            "description": "RHEM Scenario description",
+            "value": ""
+        },
+        {
+            "name": "units",
+            "description": "RHEM Scenario Unit of Measure, 1 = metric and 2 = English",
+            "value": 1
+        },
+        {
+            "name": "stateid",
+            "description": " State Abbreviation",
+            "value": "TX"
+        },
+        {
+            "name": "climatestationid",
+            "description": "Climate Station Identification Number",
+            "value": "415596"
+        },
+        {
+            "name": "soiltexture",
+            "description": "Surface Soil Texture Class Label",
+            "value": "Clay Loam"
+        },
+        {
+            "name": "moisturecontent",
+            "description": "",
+            "value": 25
+        },
+        {
+            "name": "slopelength",
+            "description": "Slope Length",
+            "value": 50,
+            "unit": "ft/m",
+            "min": 0.01,
+            "max": "394 feet/120 meters"
+        },
+        {
+            "name": "slopeshape",
+            "description": "Slope Shape",
+            "value": "Uniform"
+        },
+        {
+            "name": "slopesteepness",
+            "description": "Slope Steepness",
+            "value": 1,
+            "unit": "%",
+            "min": 0.01,
+            "max": 100
+        },
+        {
+            "name": "bunchgrasscanopycover",
+            "description": "Bunchgrass Foliar Cover Percent",
+            "value": 10,
+            "unit": "%",
+            "min": 0.01,
+            "max": 100
+        },
+        {
+            "name": "forbscanopycover",
+            "description": "Forbs and Annuals Foliar Cover Percent",
+            "value": 2,
+            "unit": "%",
+            "min": 0.01,
+            "max": 100
+        },
+        {
+            "name": "shrubscanopycover",
+            "description": "Shrub Foliar Cover Percent",
+            "value": 25,
+            "unit": "%",
+            "min": 0.01,
+            "max": 100
+        },
+        {
+            "name": "sodgrasscanopycover",
+            "description": "Sodgrass Foliar Cover Percent",
+            "value": 5,
+            "unit": "%",
+            "min": 0.01,
+            "max": 100
+        },
+        {
+            "name": "basalcover",
+            "description": "Plant Basal Cover Percent",
+            "value": 5,
+            "unit": "%",
+            "min": 0.01,
+            "max": 100
+        },
+        {
+            "name": "rockcover",
+            "description": "Rock Cover Percent",
+            "value": 5,
+            "unit": "%",
+            "min": 0.01,
+            "max": 100
+        },
+        {
+            "name": "littercover",
+            "description": "Litter Cover Percent",
+            "value": 15,
+            "unit": "%",
+            "min": 0.01,
+            "max": 100
+        },
+        {
+            "name": "cryptogamscover",
+            "Description": "Cryptogam Cover Percent",
+            "value": 5,
+            "unit": "%",
+            "min": 0.01,
+            "max": 100
+        }
+    ],
+    "result": [
+        {
+            "name": "CLEN",
+            "value": 125
+        },
+        {
+            "name": "UNITS",
+            "value": "metric"
+        },
+        {
+            "name": "DIAMS",
+            "value": "0.002 0.01 0.038 0.58 0.2"
+        },
+        {
+            "name": "DENSITY",
+            "value": "2.6 2.65 1.8 1.6 2.65"
+        },
+        {
+            "name": "CHEZY",
+            "value": 6.09807878987251
+        },
+        {
+            "name": "RCHEZY",
+            "value": 6.09807878987251
+        },
+        {
+            "name": "SX",
+            "value": "0.01, 0.01"
+        },
+        {
+            "name": "SL",
+            "value": "0.0, 1.0"
+        },
+        {
+            "name": "KSS",
+            "value": 3848.6727504123787
+        },
+        {
+            "name": "KE",
+            "value": 0.8679202882481906
+        },
+        {
+            "name": "G",
+            "value": 260
+        },
+        {
+            "name": "DIST",
+            "value": 0.24
+        },
+        {
+            "name": "POR",
+            "value": 0.4589
+        },
+        {
+            "name": "FRACT",
+            "value": "0.0848 0.0397 0.3157 0.5148 0.045"
+        },
+        {
+            "name": "scenario_input_1476121492836.par",
+            "value": "http://localhost:8080/csip-rhem/q/3fbbfff2-8f11-11e6-85ac-7d60b0df5ddc/scenario_input_1476121492836.par",
+            "description": "Parameter input file"
+        },
+        {
+            "name": "storm_input_1476121492836.pre",
+            "value": "http://localhost:8080/csip-rhem/q/3fbbfff2-8f11-11e6-85ac-7d60b0df5ddc/storm_input_1476121492836.pre",
+            "description": "Storm input file"
+        },
+        {
+            "name": "scenario_output_summary_1476121492836.sum",
+            "value": "http://localhost:8080/csip-rhem/q/3fbbfff2-8f11-11e6-85ac-7d60b0df5ddc/scenario_output_summary_1476121492836.sum",
+            "description": "Summary file"
+        },
+        {
+            "name": "scenario_output_summary_1476121492836.out",
+            "value": "http://localhost:8080/csip-rhem/q/3fbbfff2-8f11-11e6-85ac-7d60b0df5ddc/scenario_output_summary_1476121492836.out",
+            "description": "Detailed"
+        }
+    ]
+}

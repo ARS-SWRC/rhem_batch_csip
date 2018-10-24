@@ -1,5 +1,5 @@
 
-# RHEM BATCH SCRIPT DESCRIPTION
+# RHEM Batch Script Description
 
 The purpose of the RHEM Batch Script is to allow users to run the RHEM model in batch mode.
 This script depends on the RHEM CSIP web service.  More information can be found describing
@@ -9,14 +9,14 @@ This script can be downloaded from the following website:
   https://apps.tucson.ars.ag.gov/rhem/docs
 
 
-# REQUIREMENTS
+# Requirements
 
 In order to run the RHEM Batch Script, you will need:
  * An internet enabled computer
  * Python
  * Excel  
 
-#INSTALLATION
+# Installation
 
  1) Install Python 3 in your system
 

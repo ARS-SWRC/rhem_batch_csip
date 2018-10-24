@@ -1,2 +1,36 @@
-# rhem_batch_csip
-Runs the RHEM model in batch mode using the CSIP service hosted by CSU
+
+# RHEM BATCH SCRIPT DESCRIPTION
+
+The purpose of the RHEM Batch Script is to allow users to run the RHEM model in batch mode.
+This script depends on the RHEM CSIP web service.  More information can be found describing
+this web service at the following URL: https://alm.engr.colostate.edu/cb/item/27202
+
+This script can be downloaded from the following website: 
+  https://apps.tucson.ars.ag.gov/rhem/docs
+
+
+# REQUIREMENTS
+
+In order to run the RHEM Batch Script, you will need:
+ * An internet enabled computer
+ * Python
+ * Excel  
+
+#INSTALLATION
+
+ 1) Install Python 3 in your system
+
+ 2) Install the required Python packages by running the pip installer using the 
+    provided requirements.txt file
+
+    * Run:   pip install -r requirements.txt
+
+ 3) Once Python and the required packages have been installed, you can enter the scenario
+    information into the Excel spreadsheet.
+
+    * Note that in order to get the climate station identifiers, you can use the RHEM Web Tool. 
+      Please refer to the Climate Station section in this web page: https://apps.tucson.ars.ag.gov/rhem/tool
+
+ 4) Make sure that the RHEM_template.xlsx workbook is in the same location as the RHEM Batch Script
+
+ 5) Run the RHEM Batch Script by running:  python rhem_batch_csip.py

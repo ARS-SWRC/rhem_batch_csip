@@ -1,6 +1,6 @@
 .vscode
-CSIP/csip-rhem
+/CSIP/csip-rhem/
 Other_peoples_scripts
 output
 venv
-rhem_json_response.json 
+rhem_json_response.json

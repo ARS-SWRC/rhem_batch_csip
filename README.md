@@ -1,5 +1,5 @@
 
-# RHEM Batch Script Description CHANGE
+# RHEM Batch Script Description
 
 The purpose of the RHEM Batch Script is to allow users to run the RHEM model in batch mode.
 This script depends on the RHEM CSIP web service.  More information can be found describing

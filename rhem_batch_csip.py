@@ -6,7 +6,7 @@
 ##  NOTE: This project is now being tracked with Git. It will be updated often.
 ## 
 ##  Author: Gerardo Armendariz
-##  Modified: 8/15/2018
+##  Modified: 11/14/2018
 ##  
 import os
 import sys
@@ -18,7 +18,7 @@ from openpyxl import load_workbook
 from openpyxl import Workbook
 
 ### MODIFY THESE VALUES TO RUN RHEM
-SCENARIO_COUNT = 100
+SCENARIO_COUNT = 3
 OUTPUT_DIR = "output"
 try:
     RHEM_WORKBOOK = load_workbook("RHEM_template.xlsx",data_only=True)
@@ -59,18 +59,23 @@ def createOutputDirectory():
 #
 def openAndRunRHEMScenarios():
     ws = RHEM_WORKBOOK.active
-
+    error_message = ""
     row_index = 1
     for row in ws.iter_rows(min_row=2, max_col=20, max_row=SCENARIO_COUNT + 1):
-        total_canopy = int(row[12].value) + int(row[13].value) + int(row[14].value) + int(row[15].value)
-        total_ground = int(row[16].value) + int(row[17].value) + int(row[18].value) + int(row[19].value)
+        # total canopy cover = Bunch + Forbs + Shrubs + Sod
+        #print("%s %s %s %s" % (row[9].value, row[10].value, row[11].value, row[12].value))
+        total_canopy = float(row[9].value) + float(row[10].value) + float(row[11].value) + float(row[12].value)
+        # total groudn cover = Basal + Rock + Litter + Biological Crusts    
+        total_ground = float(row[13].value) + float(row[14].value) + float(row[15].value) + float(row[16].value)
         if total_canopy > 100 or total_ground > 100:
-            print("Skipping scenario " + row[2].value + ". Total canopy cover and total group cover cannot exceed 100%")
+            error_message = "Skipping scenario " + row[0].value + ". Total canopy cover and total ground cover cannot exceed 100%"
+            print(error_message)
+            ws.cell(row=row_index + 1, column=19).value = error_message
             pass
         else:
-            print("Running scenario: " + row[2].value)
+            print("Running scenario: " + row[0].value)
             # crete the input file/request to run the curren scenario
-            request_data = createInputFile(row[0].value, row[1].value,  row[2].value, row[3].value, row[4].value, row[5].value, row[6].value, row[7].value, row[8].value, row[9].value, row[10].value, row[11].value, row[12].value, row[13].value, row[14].value, row[15].value, row[16].value, row[17].value, row[18].value,row[19].value)
+            request_data = createInputFile(row_index, row_index,  row[0].value, row[1].value, row[2].value, row[3].value, row[4].value, row[5].value, 25, row[6].value, row[7].value, row[8].value, row[9].value, row[10].value, row[11].value, row[12].value, row[13].value, row[14].value, row[15].value,row[16].value)
             # run the RHEM CSIP Service
             rhem_response = runRHEMCSIPService(request_data, row_index)
 
@@ -103,7 +108,7 @@ def saveScenarioParameterFile(rhem_run_response):
         file.write(str(rhem_parameters_result.text).encode())
 
 ####
-# Save the response summary file
+# Save the response summary filels
 #
 def saveScenarioSummaryResults(rhem_run_response):
     # summary file
@@ -122,14 +127,14 @@ def saveScenarioSummaryResultsToExcel(rhem_run_response,row_index):
         index = 3
         for line in itertools.islice(file, 2, 6):
             #print(line)
-            if index == 3:
+            if index == 3: # Avg. Precipitation
+                ws.cell(row=row_index + 1, column=19).value = str(line).split("=")[1].rstrip("'").strip(r'\n')
+            elif index == 4: # Avg. Runoff
+                ws.cell(row=row_index + 1, column=20).value = str(line).split("=")[1].rstrip("'").strip(r'\n')
+            elif index == 5: # Avg. Soil Loss
+                ws.cell(row=row_index + 1, column=21).value = str(line).split("=")[1].rstrip("'").strip(r'\n')
+            elif index == 6: # Avg. Sediment Yield
                 ws.cell(row=row_index + 1, column=22).value = str(line).split("=")[1].rstrip("'").strip(r'\n')
-            elif index == 4:
-                ws.cell(row=row_index + 1, column=23).value = str(line).split("=")[1].rstrip("'").strip(r'\n')
-            elif index == 5:
-                ws.cell(row=row_index + 1, column=24).value = str(line).split("=")[1].rstrip("'").strip(r'\n')
-            elif index == 6:
-                ws.cell(row=row_index + 1, column=25).value = str(line).split("=")[1].rstrip("'").strip(r'\n')
             index = index + 1
     
     RHEM_WORKBOOK.save("RHEM_template.xlsx")
@@ -137,7 +142,7 @@ def saveScenarioSummaryResultsToExcel(rhem_run_response,row_index):
 #####
 #  Crate the input request for the CSIP RHEM service
 #
-def createInputFile(AoAID, rhem_site_id, scenarioname, scenariodescription, units, stateid, climatestationid, soiltexture, moisturecontent, slopelength, slopeshape, slopesteepness, bunchgrasscanopycover, forbscanopycover, shrubscanopycover, sodgrasscanopycover, basalcover, rockcover, littercover, cryptogamscover):
+def createInputFile(AoAID, rhem_site_id, scenarioname, scenariodescription, units, stateid, climatestationid, soiltexture, soilmoisture, slopelength, slopeshape, slopesteepness, bunchgrasscanopycover, forbscanopycover, shrubscanopycover, sodgrasscanopycover, basalcover, rockcover, littercover, cryptogamscover):
     request_data = '''{
         "metainfo": {},
         "parameter": [
@@ -184,7 +189,7 @@ def createInputFile(AoAID, rhem_site_id, scenarioname, scenariodescription, unit
             {
                 "name": "moisturecontent",
                 "description": "",
-                "value": ''' + str(moisturecontent) + '''
+                "value": ''' + str(soilmoisture) + ''',
             },
             {
                 "name": "slopelength",

@@ -5,7 +5,7 @@ The purpose of the RHEM Batch Script is to allow users to run the RHEM model in 
 This script depends on the RHEM CSIP web service.  More information can be found describing
 this web service at the following URL: https://alm.engr.colostate.edu/cb/item/27202
 
-This script can be downloaded from the following website: 
+This script will also be available for downloaded from the following website: 
   https://apps.tucson.ars.ag.gov/rhem/docs
 
 

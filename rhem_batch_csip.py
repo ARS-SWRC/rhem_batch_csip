@@ -17,15 +17,18 @@ import itertools
 from openpyxl import load_workbook
 from openpyxl import Workbook
 
-### MODIFY THESE VALUES TO RUN RHEM
-SCENARIO_COUNT = 3
-OUTPUT_DIR = "output"
+###### MODIFY THESE VALUES TO RUN RHEM
+SCENARIO_COUNT = 3     # this is the number of scenarios (rows) to run
+OUTPUT_DIR = "output"  # this is the output directory where paramter and summary files will be saved
+######
+
+
 try:
     RHEM_WORKBOOK = load_workbook("RHEM_template.xlsx",data_only=True)
 except:
     print("The Excel template file was not found.")
 
-CSIP_RHEM_URL = 'http://csip.engr.colostate.edu:8083/csip-rhem/m/rhem/runrhem/1.0'
+CSIP_RHEM_URL = 'http://csip.engr.colostate.edu:8083/csip-rhem/m/rhem/runrhem/1.0'  
 
 #####
 #  Main function
@@ -55,7 +58,7 @@ def createOutputDirectory():
         print("The output directory for RHEM outputs to be stored could not be created!")
 
 ####
-# Open a RHEM scenario from the workbook and submit run job
+# Open a RHEM scenario from the workbook and submit run job in order to under
 #
 def openAndRunRHEMScenarios():
     ws = RHEM_WORKBOOK.active

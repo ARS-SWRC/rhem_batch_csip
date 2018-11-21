@@ -18,7 +18,7 @@ from openpyxl import load_workbook
 from openpyxl import Workbook
 
 ###### MODIFY THESE VALUES TO RUN RHEM
-SCENARIO_COUNT = 3     # this is the number of scenarios (rows) to run
+SCENARIO_COUNT = 1     # this is the number of scenarios (rows) to run
 OUTPUT_DIR = "output"  # this is the output directory where paramter and summary files will be saved
 ######
 
@@ -65,16 +65,26 @@ def openAndRunRHEMScenarios():
     error_message = ""
     row_index = 1
     for row in ws.iter_rows(min_row=2, max_col=20, max_row=SCENARIO_COUNT + 1):
+        ## Validate for empty input values
+        inputs = (row[0].value, row[2].value, row[3].value, row[4].value, row[5].value, row[6].value, row[7].value, row[8].value, row[9].value, row[10].value,row[11].value,row[12].value,row[13].value,row[14].value, row[15].value,row[16].value)
+        if any(s is None for s in inputs):
+            error_message = "Please make sure that you have entered all required inputs to run the current scenario"
+            print(error_message)
+            ws.cell(row=row_index + 1, column=19).value = error_message
+            row_index = row_index + 1
+            continue
+
+        ## Validate cover values
         # total canopy cover = Bunch + Forbs + Shrubs + Sod
-        #print("%s %s %s %s" % (row[9].value, row[10].value, row[11].value, row[12].value))
+        # tsts
         total_canopy = float(row[9].value) + float(row[10].value) + float(row[11].value) + float(row[12].value)
         # total groudn cover = Basal + Rock + Litter + Biological Crusts    
         total_ground = float(row[13].value) + float(row[14].value) + float(row[15].value) + float(row[16].value)
+        
         if total_canopy > 100 or total_ground > 100:
             error_message = "Skipping scenario " + row[0].value + ". Total canopy cover and total ground cover cannot exceed 100%"
             print(error_message)
             ws.cell(row=row_index + 1, column=19).value = error_message
-            pass
         else:
             print("Running scenario: " + row[0].value)
             # crete the input file/request to run the curren scenario

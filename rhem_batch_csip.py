@@ -18,13 +18,14 @@ from openpyxl import load_workbook
 from openpyxl import Workbook
 
 ###### MODIFY THESE VALUES TO RUN RHEM
-SCENARIO_COUNT = 1     # this is the number of scenarios (rows) to run
-OUTPUT_DIR = "output"  # this is the output directory where paramter and summary files will be saved
+SCENARIO_COUNT = 7     # the number of scenarios (rows) to run
+OUTPUT_DIR = "output"  # the output directory where paramter and summary files will be saved
+WORKBOOK_Name = "RHEM_template.xlsx" # the workbook used for inputs and results
 ######
 
 
 try:
-    RHEM_WORKBOOK = load_workbook("RHEM_template.xlsx",data_only=True)
+    RHEM_WORKBOOK = load_workbook(WORKBOOK_Name,data_only=True)
 except:
     print("The Excel template file was not found.")
 
@@ -89,6 +90,7 @@ def openAndRunRHEMScenarios():
             print("Running scenario: " + row[0].value)
             # crete the input file/request to run the curren scenario
             request_data = createInputFile(row_index, row_index,  row[0].value, row[1].value, row[2].value, row[3].value, row[4].value, row[5].value, 25, row[6].value, row[7].value, row[8].value, row[9].value, row[10].value, row[11].value, row[12].value, row[13].value, row[14].value, row[15].value,row[16].value)
+            print(request_data)
             # run the RHEM CSIP Service
             rhem_response = runRHEMCSIPService(request_data, row_index)
 
@@ -150,7 +152,7 @@ def saveScenarioSummaryResultsToExcel(rhem_run_response,row_index):
                 ws.cell(row=row_index + 1, column=22).value = str(line).split("=")[1].rstrip("'").strip(r'\n')
             index = index + 1
     
-    RHEM_WORKBOOK.save("RHEM_template.xlsx")
+    RHEM_WORKBOOK.save(WORKBOOK_Name)
 
 #####
 #  Crate the input request for the CSIP RHEM service

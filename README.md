@@ -16,7 +16,7 @@ In order to run the RHEM Batch Script, you will need:
  * Python
  * Excel  
 
-# Installation
+# Installation and running script
 
  1) Install Python 3 in your system
 
@@ -29,8 +29,8 @@ In order to run the RHEM Batch Script, you will need:
     information into the Excel spreadsheet.
 
     * Note that in order to get the climate station identifiers, you can use the RHEM Web Tool. 
-      Please refer to the Climate Station section in this web page: https://apps.tucson.ars.ag.gov/rhem/tool
+      Please refer to the Climate Station section: https://apps.tucson.ars.ag.gov/rhem/tool
 
  4) Make sure that the RHEM_template.xlsx workbook is in the same location as the RHEM Batch Script
 
- 5) Run the RHEM Batch Script by running:  python rhem_batch_csip.py
+ 5) Run the RHEM Batch Script:  python rhem_batch_csip.py

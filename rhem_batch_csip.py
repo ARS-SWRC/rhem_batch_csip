@@ -1,12 +1,10 @@
 ###################################
 ##
-##  Purpose: This script will run the RHEM model in batch mode using the CSIP service
+##  Purpose: This script will run the RHEM model in batch mode using the RHEM CSIP web service
 ##           hosted by CSU
-##
-##  NOTE: This project is now being tracked with Git. It will be updated often.
 ## 
 ##  Author: Gerardo Armendariz
-##  Modified: 11/14/2018
+##  Modified: 4/22/2019
 ##  
 import os
 import sys
@@ -17,12 +15,11 @@ import itertools
 from openpyxl import load_workbook
 from openpyxl import Workbook
 
-###### MODIFY THESE VALUES TO RUN RHEM
-SCENARIO_COUNT = 7     # the number of scenarios (rows) to run
-OUTPUT_DIR = "output"  # the output directory where paramter and summary files will be saved
-WORKBOOK_Name = "RHEM_template.xlsx" # the workbook used for inputs and results
+###### MODIFY THESE VALUES TO RUN RHEM BATCH SCRIPT
+SCENARIO_COUNT = 1                          # the number of scenarios (rows) to run
+OUTPUT_DIR = "output"                       # the output directory where paramter and summary files will be saved
+WORKBOOK_Name = "RHEM_template.xlsx"  # the workbook used for inputs and results
 ######
-
 
 try:
     RHEM_WORKBOOK = load_workbook(WORKBOOK_Name,data_only=True)
@@ -45,11 +42,10 @@ def main():
     t1 = time.time()
     
     total = t1 - t0
-    print("Execution time: " + str(total))
-
+    print("Execution time: " + str(total) + " seconds")
 
 ####
-# Create repository to save RHEM scenario outputs
+# Creates file system repository to save RHEM scenario outputs
 #
 def createOutputDirectory():
     try:
@@ -59,7 +55,7 @@ def createOutputDirectory():
         print("The output directory for RHEM outputs to be stored could not be created!")
 
 ####
-# Open a RHEM scenario from the workbook and submit run job in order to under
+# Opens the RHEM scenarios from the workbook, validates inputs, runs CSIP web service, and saves results
 #
 def openAndRunRHEMScenarios():
     ws = RHEM_WORKBOOK.active
@@ -77,9 +73,8 @@ def openAndRunRHEMScenarios():
 
         ## Validate cover values
         # total canopy cover = Bunch + Forbs + Shrubs + Sod
-        # tsts
         total_canopy = float(row[9].value) + float(row[10].value) + float(row[11].value) + float(row[12].value)
-        # total groudn cover = Basal + Rock + Litter + Biological Crusts    
+        # total ground cover = Basal + Rock + Litter + Biological Crusts    
         total_ground = float(row[13].value) + float(row[14].value) + float(row[15].value) + float(row[16].value)
         
         if total_canopy > 100 or total_ground > 100:
@@ -88,42 +83,39 @@ def openAndRunRHEMScenarios():
             ws.cell(row=row_index + 1, column=19).value = error_message
         else:
             print("Running scenario: " + row[0].value)
+            # Validation: replace periods for underscores in scenario names
+            scenario_name = row[0].value.replace(".","_")
             # crete the input file/request to run the curren scenario
-            request_data = createInputFile(row_index, row_index,  row[0].value, row[1].value, row[2].value, row[3].value, row[4].value, row[5].value, 25, row[6].value, row[7].value, row[8].value, row[9].value, row[10].value, row[11].value, row[12].value, row[13].value, row[14].value, row[15].value,row[16].value)
-            print(request_data)
-            # run the RHEM CSIP Service
+            request_data = createInputFile(row_index, row_index,  scenario_name, row[1].value, row[2].value, row[3].value, row[4].value, row[5].value, 25, row[6].value, row[7].value, row[8].value, row[9].value, row[10].value, row[11].value, row[12].value, row[13].value, row[14].value, row[15].value,row[16].value)
+
             rhem_response = runRHEMCSIPService(request_data, row_index)
 
         row_index = row_index + 1
 
 ####
-# Run the CSIP RHEM service based on single scenario inputs
+# Runs the RHEM CSIP web service for a single scenario 
 #
 def runRHEMCSIPService(request_data, row_index):
      # request run from the RHEM CSIP service
-    csip_rhem_response = requests.post(CSIP_RHEM_URL, data=request_data)
+    headers = {'Content-Type': 'application/json'}
+    csip_rhem_response = requests.post(CSIP_RHEM_URL, data=request_data, headers=headers)
     rhem_run_response = json.loads(csip_rhem_response.content.decode('utf-8'))
-    #print(rhem_run_response["result"])
    
-    # save parameter file
     saveScenarioParameterFile(rhem_run_response)
-    # save summary file
     saveScenarioSummaryResults(rhem_run_response)
-    # save data back to spreadsheet
     saveScenarioSummaryResultsToExcel(rhem_run_response, row_index)
 
 ####
-# Save the response parameter file
+# Saves the input parameter file
 #
 def saveScenarioParameterFile(rhem_run_response):
-    # parameter file
     rhem_parameters_result_url = rhem_run_response["result"][16]["value"]
     rhem_parameters_result = requests.get(rhem_parameters_result_url)
     with open(os.path.join(OUTPUT_DIR,rhem_run_response["result"][16]["name"]), 'wb') as file:
         file.write(str(rhem_parameters_result.text).encode())
 
 ####
-# Save the response summary filels
+# Saves the response summary files
 #
 def saveScenarioSummaryResults(rhem_run_response):
     # summary file
@@ -133,7 +125,7 @@ def saveScenarioSummaryResults(rhem_run_response):
         file.write(str(rhem_summary_result.text).encode())
 
 ####
-# Save the simulation summary results to the Excel sheet
+# Saves the simulation output summary results to the Excel sheet
 #
 def saveScenarioSummaryResultsToExcel(rhem_run_response,row_index):
     ws = RHEM_WORKBOOK.active
@@ -141,7 +133,6 @@ def saveScenarioSummaryResultsToExcel(rhem_run_response,row_index):
     with open(os.path.join(OUTPUT_DIR, rhem_run_response["result"][18]["name"]), 'rb') as file:
         index = 3
         for line in itertools.islice(file, 2, 6):
-            #print(line)
             if index == 3: # Avg. Precipitation
                 ws.cell(row=row_index + 1, column=19).value = str(line).split("=")[1].rstrip("'").strip(r'\n')
             elif index == 4: # Avg. Runoff
@@ -155,7 +146,7 @@ def saveScenarioSummaryResultsToExcel(rhem_run_response,row_index):
     RHEM_WORKBOOK.save(WORKBOOK_Name)
 
 #####
-#  Crate the input request for the CSIP RHEM service
+#  Creates the input request for the CSIP RHEM service
 #
 def createInputFile(AoAID, rhem_site_id, scenarioname, scenariodescription, units, stateid, climatestationid, soiltexture, soilmoisture, slopelength, slopeshape, slopesteepness, bunchgrasscanopycover, forbscanopycover, shrubscanopycover, sodgrasscanopycover, basalcover, rockcover, littercover, cryptogamscover):
     request_data = '''{

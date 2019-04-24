@@ -16,6 +16,8 @@ from openpyxl import load_workbook
 from openpyxl import Workbook
 
 ###### MODIFY THESE VALUES TO RUN RHEM BATCH SCRIPT
+###### Note: If you are planning on doing large batch runs (greater than 2,0000) please let us know. 
+######       You can email gerardo.armendariz@ars.usda.gov
 SCENARIO_COUNT = 1                          # the number of scenarios (rows) to run
 OUTPUT_DIR = "output"                       # the output directory where paramter and summary files will be saved
 WORKBOOK_Name = "RHEM_template.xlsx"  # the workbook used for inputs and results

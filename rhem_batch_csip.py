@@ -103,9 +103,14 @@ def runRHEMCSIPService(request_data, row_index):
     csip_rhem_response = requests.post(CSIP_RHEM_URL, data=request_data, headers=headers)
     rhem_run_response = json.loads(csip_rhem_response.content.decode('utf-8'))
    
-    saveScenarioParameterFile(rhem_run_response)
-    saveScenarioSummaryResults(rhem_run_response)
-    saveScenarioSummaryResultsToExcel(rhem_run_response, row_index)
+    if "error" in rhem_run_response["metainfo"]:
+        print(rhem_run_response["metainfo"]["error"])
+    else:
+        saveScenarioParameterFile(rhem_run_response)
+        saveScenarioSummaryResults(rhem_run_response)
+        saveScenarioSummaryResultsToExcel(rhem_run_response, row_index)
+
+    
 
 ####
 # Saves the input parameter file

@@ -4,7 +4,6 @@
 ##           hosted by CSU
 ## 
 ##  Author: Gerardo Armendariz
-##  Modified: 4/22/2019
 ##  
 import os
 import sys
@@ -18,17 +17,17 @@ from openpyxl import Workbook
 ###### MODIFY THESE VALUES TO RUN RHEM BATCH SCRIPT
 ###### Note: If you are planning on doing large batch runs (greater than 2,0000) please let us know. 
 ######       You can email gerardo.armendariz@ars.usda.gov
-SCENARIO_COUNT = 1                          # the number of scenarios (rows) to run
-OUTPUT_DIR = "output"                       # the output directory where paramter and summary files will be saved
+SCENARIO_COUNT = 1                           # the number of scenarios (rows) to run
+OUTPUT_DIR = "output"                          # the output directory where paramter and summary files will be saved
 WORKBOOK_Name = "RHEM_template.xlsx"  # the workbook used for inputs and results
-######
+###################################################
 
 try:
     RHEM_WORKBOOK = load_workbook(WORKBOOK_Name,data_only=True)
 except:
     print("The Excel template file was not found.")
 
-CSIP_RHEM_URL = 'http://csip.engr.colostate.edu:8083/csip-rhem/m/rhem/runrhem/1.0'  
+CSIP_RHEM_URL = 'http://csip.engr.colostate.edu:8083/csip-rhem/m/rhem/runrhem/1.0'
 
 #####
 #  Main function
@@ -71,6 +70,7 @@ def openAndRunRHEMScenarios():
             print(error_message)
             ws.cell(row=row_index + 1, column=19).value = error_message
             row_index = row_index + 1
+            RHEM_WORKBOOK.save(WORKBOOK_Name)
             continue
 
         ## Validate cover values
@@ -80,37 +80,45 @@ def openAndRunRHEMScenarios():
         total_ground = float(row[13].value) + float(row[14].value) + float(row[15].value) + float(row[16].value)
         
         if total_canopy > 100 or total_ground > 100:
-            error_message = "Skipping scenario " + row[0].value + ". Total canopy cover and total ground cover cannot exceed 100%"
+            error_message = "Skipping scenario " + str(row[0].value) + ". Total canopy cover and total ground cover cannot exceed 100%"
             print(error_message)
-            ws.cell(row=row_index + 1, column=19).value = error_message
+            ws.cell(row=row_index + 1, column=23).value = error_message
+            row_index = row_index + 1
+            RHEM_WORKBOOK.save(WORKBOOK_Name)
+            continue
         else:
-            print("Running scenario: " + row[0].value)
+            print("Running scenario: " + str(ws.cell(row=row_index + 1, column=1).value))
             # Validation: replace periods for underscores in scenario names
-            scenario_name = row[0].value.replace(".","_")
+            scenario_name = str(row[0].value).replace(".","_")
             # crete the input file/request to run the curren scenario
             request_data = createInputFile(row_index, row_index,  scenario_name, row[1].value, row[2].value, row[3].value, row[4].value, row[5].value, 25, row[6].value, row[7].value, row[8].value, row[9].value, row[10].value, row[11].value, row[12].value, row[13].value, row[14].value, row[15].value,row[16].value)
 
-            rhem_response = runRHEMCSIPService(request_data, row_index)
+            if ws.cell(row=row_index + 1, column=22).value is None:
+                print(str(ws.cell(row=row_index + 1, column=1).value))
+                rhem_response = runRHEMCSIPService(request_data, row_index)
 
         row_index = row_index + 1
-
+    
 ####
 # Runs the RHEM CSIP web service for a single scenario 
 #
 def runRHEMCSIPService(request_data, row_index):
+    ws = RHEM_WORKBOOK.active
      # request run from the RHEM CSIP service
     headers = {'Content-Type': 'application/json'}
     csip_rhem_response = requests.post(CSIP_RHEM_URL, data=request_data, headers=headers)
     rhem_run_response = json.loads(csip_rhem_response.content.decode('utf-8'))
-   
+    #ws.cell(row=row_index + 1, column=23).value = "TEST"
+
     if "error" in rhem_run_response["metainfo"]:
-        print(rhem_run_response["metainfo"]["error"])
+        error_message = rhem_run_response["metainfo"]["error"]
+        print(error_message)
+        ws.cell(row=row_index + 1, column=23).value = error_message
     else:
         saveScenarioParameterFile(rhem_run_response)
         saveScenarioSummaryResults(rhem_run_response)
         saveScenarioSummaryResultsToExcel(rhem_run_response, row_index)
-
-    
+    RHEM_WORKBOOK.save(WORKBOOK_Name)
 
 ####
 # Saves the input parameter file

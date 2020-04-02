@@ -18,7 +18,7 @@ In order to run the RHEM Batch Script, you will need:
 
 # Installation and running script
 
-**NOTE:** If you are planning on doing large batch runs (greater than 2,0000) please let us know.  You can email gerardo.armendariz@ars.usda.gov 
+**NOTE:** If you are planning on doing large batch runs (greater than 2,0000) please let us know.  You can email gerardo.armendariz@usda.gov 
 
  1) Install Python 3 in your system
 
@@ -33,6 +33,8 @@ In order to run the RHEM Batch Script, you will need:
     * Note that in order to get the climate station identifiers, you can use the RHEM Web Tool. 
       Please refer to the Climate Station section: https://apps.tucson.ars.ag.gov/rhem/tool
 
- 4) Make sure that the RHEM_template.xlsx workbook is in the same location as the RHEM Batch Script
+ 4) Make sure that the spreadsheet (e.g. RHEM_template.xlsx) is in the same location as the RHEM Python script.
 
- 5) Run the RHEM Batch Script:  python rhem_batch_csip.py
+ 5) Control the number of scenarios to run, output, and spreadsheet/workbook name using the variables (SCENARIO_COUNT, OUTPUT_DIR, and WORKBOOK_Name) in the header of the RHEM Python script.
+
+ 6) Run the RHEM Batch Script:  python rhem_batch_csip.py

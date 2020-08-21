@@ -1,22 +1,28 @@
 ###################################
 ##
-##  Purpose: This script will run the RHEM model in batch mode using the RHEM CSIP web service
-##           hosted by CSU
+##  Purpose: Run the RHEM model in batch mode using the RHEM CSIP web service
+##           hosted by CSU. Scenarios inputs and model outputs can be saved using the RHEM_template.xlsx spreadsheet.
+##           This script will allow the web service to be ran asynchronously.
 ## 
 ##  Author: Gerardo Armendariz
 ##  
+
 import os
 import sys
 import requests
 import json
 import time
+from time import gmtime, strftime
 import itertools
 from openpyxl import load_workbook
 from openpyxl import Workbook
 
+import asyncio
+from aiohttp import ClientSession, TCPConnector, ClientTimeout
+
 ###### MODIFY THESE VALUES TO RUN RHEM BATCH SCRIPT
 ###### Note: If you are planning on doing large batch runs (greater than 2,0000) please let us know. 
-######       You can email gerardo.armendariz@usda.gov
+######       You can email gerardo.armendariz@usda.gov  
 SCENARIO_COUNT = 1                    # the number of scenarios (rows) to run
 OUTPUT_DIR = "output"                 # the output directory where paramter and summary files will be saved
 WORKBOOK_Name = "RHEM_template.xlsx"  # the workbook used for inputs and results
@@ -35,15 +41,11 @@ CSIP_RHEM_URL = 'http://csip.engr.colostate.edu:8083/csip-rhem/m/rhem/runrhem/1.
 def main():
     # create an output directory
     createOutputDirectory()
-    # start timer
-    t0 = time.time()
-    # run RHEM for all scenarios in Excel template
-    openAndRunRHEMScenarios()
-    # end timer
-    t1 = time.time()
     
-    total = t1 - t0
-    print("Execution time: " + str(total) + " seconds")
+    # start an async event loop to run RHEM for all scenarios in Excel template
+    loop = asyncio.get_event_loop()
+    future = asyncio.ensure_future(openAndRunRHEMScenarios())
+    loop.run_until_complete(future)
 
 ####
 # Creates file system repository to save RHEM scenario outputs
@@ -58,73 +60,103 @@ def createOutputDirectory():
 ####
 # Opens the RHEM scenarios from the workbook, validates inputs, runs CSIP web service, and saves results
 #
-def openAndRunRHEMScenarios():
+async def openAndRunRHEMScenarios():
     ws = RHEM_WORKBOOK.active
+
+    # object holding all asyncrhnous runs
+    tasks = []
+
     error_message = ""
     row_index = 1
-    for row in ws.iter_rows(min_row=2, max_col=20, max_row=SCENARIO_COUNT + 1):
-        ## Validate for empty input values
-        inputs = (row[0].value, row[2].value, row[3].value, row[4].value, row[5].value, row[7].value, row[8].value, row[9].value, row[10].value,row[11].value,row[12].value,row[13].value,row[14].value, row[15].value,row[16].value, row[17].value)
-        if any(s is None for s in inputs):
-            error_message = "Please make sure that you have entered all required inputs to run the current scenario"
-            print(error_message)
-            ws.cell(row=row_index + 1, column=25).value = error_message
-            row_index = row_index + 1
-            RHEM_WORKBOOK.save(WORKBOOK_Name)
-            continue
 
-        ## Validate cover values
-        # total canopy cover = Bunch + Forbs + Shrubs + Sod
-        total_canopy = round(float(row[10].value) + float(row[11].value) + float(row[12].value) + float(row[13].value), 2)
-        # total ground cover = Basal + Rock + Litter + Biological Crusts    
-        total_ground = round(float(row[14].value) + float(row[15].value) + float(row[16].value) + float(row[17].value), 2)
-        
-        if total_canopy > 100 or total_ground > 100:
-            error_message = "Skipping scenario " + str(row[0].value) + ". Total canopy cover and total ground cover cannot exceed 100%"
-            print(error_message)
-            ws.cell(row=row_index + 1, column=25).value = error_message
-            row_index = row_index + 1
-            RHEM_WORKBOOK.save(WORKBOOK_Name)
-            continue
-        else:
-            if ws.cell(row=row_index + 1, column=22).value is None:
-                print("Running scenario: " + str(ws.cell(row=row_index + 1, column=1).value))
-                # Validation: replace periods for underscores in scenario names
-                scenario_name = str(row[0].value).replace(".","_")
-                
-                # default SAR to 0 in order for the service to run
-                SAR = row[6].value
-                if SAR is None:   
-                    SAR = 0
+    t0 = time.time()
+    print("Begin time: " + strftime("%a, %d %b %Y %H:%M:%S", gmtime()))
+    # Use the aiohttp ClientSession to asyncronously create tasks for each RHEM scenario run.
+    # Throttle the async calls to 10 connections at a time.
+    connector = TCPConnector(limit=10)
+    timeout = ClientTimeout(total=86400)
+    async with ClientSession(connector=connector,timeout=timeout) as session:
+        for row in ws.iter_rows(min_row=2, max_col=20, max_row=SCENARIO_COUNT + 1):
+            ## Validate for empty input values
+            inputs = (row[0].value, row[2].value, row[3].value, row[4].value, row[5].value, row[7].value, row[8].value, row[9].value, row[10].value,row[11].value,row[12].value,row[13].value,row[14].value, row[15].value,row[16].value, row[17].value)
+            if any(s is None for s in inputs):
+                error_message = "Please make sure that you have entered all required inputs to run the current scenario"
+                print(error_message)
+                ws.cell(row=row_index + 1, column=25).value = error_message
+                row_index = row_index + 1
+                RHEM_WORKBOOK.save(WORKBOOK_Name)
+                continue
 
-                # crete the input file/request to run the curren scenario
-                request_data = createInputFile(row_index, row_index,  scenario_name, row[1].value, row[2].value, row[3].value, row[4].value, row[5].value, SAR, 25, row[7].value, row[8].value, row[9].value, row[10].value, row[11].value, row[12].value, row[13].value, row[14].value, row[15].value,row[16].value, row[17].value)
-                
-                rhem_response = runRHEMCSIPService(request_data, row_index)
+            ## Validate cover values
+            # total canopy cover = Bunch + Forbs + Shrubs + Sod
+            total_canopy = round(float(row[10].value) + float(row[11].value) + float(row[12].value) + float(row[13].value), 2)
+            # total ground cover = Basal + Rock + Litter + Biological Crusts    
+            total_ground = round(float(row[14].value) + float(row[15].value) + float(row[16].value) + float(row[17].value), 2)
+            
+            if total_canopy > 100 or total_ground > 100:
+                error_message = "Skipping scenario " + str(row[0].value) + ". Total canopy cover and total ground cover cannot exceed 100%"
+                print(error_message)
+                ws.cell(row=row_index + 1, column=25).value = error_message
+                row_index = row_index + 1
+                RHEM_WORKBOOK.save(WORKBOOK_Name)
+                continue
+            else:
+                if ws.cell(row=row_index + 1, column=22).value is None:
+                    # Validation: replace periods for underscores in scenario names
+                    scenario_name = str(row[0].value).replace(".","_")
+                    
+                    # default SAR to 0 in order for the service to run
+                    SAR = row[6].value
+                    if SAR is None:   
+                        SAR = 0
 
-            row_index = row_index + 1    
+                    # crete the input file/request to run the curren scenario
+                    request_data = createInputFile(row_index, row_index,  scenario_name, row[1].value, row[2].value, row[3].value, row[4].value, row[5].value, SAR, 25, row[7].value, row[8].value, row[9].value, row[10].value, row[11].value, row[12].value, row[13].value, row[14].value, row[15].value,row[16].value, row[17].value)
+                    
+                    task = asyncio.ensure_future(runRHEMCSIPServiceAsync(CSIP_RHEM_URL, request_data, session, row_index, scenario_name))
+                    tasks.append(task)
 
-    
+                row_index = row_index + 1   
+
+         # all the RHEM scenario run response bodies in this variable
+        responses = await asyncio.gather(*tasks)
+        #print(responses)
+
+        # end timer
+        t1 = time.time()
+        print("End time: " + strftime("%a, %d %b %Y %H:%M:%S", gmtime()))
+        total = t1 - t0
+        print("Execution time: " + str(total) + " seconds")
+
+    # close the evnet loop        
+    await session.close()
+
 ####
-# Runs the RHEM CSIP web service for a single scenario 
+# Fetch a new RHEM run using the given payload(requestBody).  Use the row_index to identify the scneario (from the Excel spreadsheet)
+# being processed.
 #
-def runRHEMCSIPService(request_data, row_index):
+async def runRHEMCSIPServiceAsync(url, requestBody, session, row_index, scenario_name):
     ws = RHEM_WORKBOOK.active
-     # request run from the RHEM CSIP service
-    headers = {'Content-Type': 'application/json'}
-    csip_rhem_response = requests.post(CSIP_RHEM_URL, data=request_data, headers=headers)
-    rhem_run_response = json.loads(csip_rhem_response.content.decode('utf-8'))
+    
+    async with session.post(url, json=json.loads(requestBody)) as response:
+        print("Finished scenario: " + scenario_name)
+        
+        try:
+            rhem_run_response = await response.json()
+        except:
+            print("Error reading JSON response for scenario: " + scenario_name)
 
-    if "error" in rhem_run_response["metainfo"]:
-        error_message = rhem_run_response["metainfo"]["error"]
-        print(error_message)
-        ws.cell(row=row_index + 1, column=25).value = error_message
-    else:
-        saveScenarioParameterFile(rhem_run_response)
-        saveScenarioSummaryResults(rhem_run_response)
-        saveScenarioSummaryResultsToExcel(rhem_run_response, row_index)
-    RHEM_WORKBOOK.save(WORKBOOK_Name)
+        if "error" in rhem_run_response["metainfo"]:
+            error_message = rhem_run_response["metainfo"]["error"]
+            print(error_message)
+            ws.cell(row=row_index + 1, column=25).value = error_message
+        else:
+            saveScenarioParameterFile(rhem_run_response)
+            saveScenarioSummaryResults(rhem_run_response)
+            saveScenarioSummaryResultsToExcel(rhem_run_response, row_index)
 
+        RHEM_WORKBOOK.save(WORKBOOK_Name)
+        return rhem_run_response
 
 ####
 # Saves the input parameter file
@@ -222,7 +254,7 @@ def createInputFile(AoAID, rhem_site_id, scenarioname, scenariodescription, unit
             {
                 "name": "moisturecontent",
                 "description": "",
-                "value": ''' + str(soilmoisture) + ''',
+                "value": ''' + str(soilmoisture) + '''
             },
             {
                 "name": "slopelength",

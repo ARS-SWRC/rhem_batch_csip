@@ -162,9 +162,9 @@ async def runRHEMCSIPServiceAsync(url, requestBody, session, row_index, scenario
 # Saves the input parameter file
 #
 def saveScenarioParameterFile(rhem_run_response):
-    rhem_parameters_result_url = rhem_run_response["result"][17]["value"]
+    rhem_parameters_result_url = rhem_run_response["result"][16]["value"]
     rhem_parameters_result = requests.get(rhem_parameters_result_url)
-    with open(os.path.join(OUTPUT_DIR,rhem_run_response["result"][17]["name"]), 'wb') as file:
+    with open(os.path.join(OUTPUT_DIR,rhem_run_response["result"][16]["name"]), 'wb') as file:
         file.write(str(rhem_parameters_result.text).encode())
 
 
@@ -173,9 +173,9 @@ def saveScenarioParameterFile(rhem_run_response):
 #
 def saveScenarioSummaryResults(rhem_run_response):
     # summary file
-    rhem_summary_result_url = rhem_run_response["result"][19]["value"]
+    rhem_summary_result_url = rhem_run_response["result"][18]["value"]
     rhem_summary_result = requests.get(rhem_summary_result_url)
-    with open(os.path.join(OUTPUT_DIR,rhem_run_response["result"][19]["name"]), 'wb') as file:
+    with open(os.path.join(OUTPUT_DIR,rhem_run_response["result"][18]["name"]), 'wb') as file:
         file.write(str(rhem_summary_result.text).encode())
 
 
@@ -186,10 +186,10 @@ def saveScenarioSummaryResultsToExcel(rhem_run_response,row_index):
     ws = RHEM_WORKBOOK.active
 
     # save the TDS (total dissolved solids) value
-    tds = rhem_run_response["result"][16]["value"]
+    tds = rhem_run_response["result"][15]["value"]
     ws.cell(row=row_index + 1, column=24).value = str(tds)
 
-    with open(os.path.join(OUTPUT_DIR, rhem_run_response["result"][19]["name"]), 'rb') as file:
+    with open(os.path.join(OUTPUT_DIR, rhem_run_response["result"][18]["name"]), 'rb') as file:
         index = 3
         for line in itertools.islice(file, 2, 6):
             if index == 3: # Avg. Precipitation
@@ -260,9 +260,7 @@ def createInputFile(AoAID, rhem_site_id, scenarioname, scenariodescription, unit
                 "name": "slopelength",
                 "description": "Slope Length",
                 "value": ''' + str(slopelength) + ''',
-                "unit": "ft/m",
-                "min": 0.01,
-                "max": "394 feet/120 meters"
+                "unit": "m"
             },
             {
                 "name": "slopeshape",

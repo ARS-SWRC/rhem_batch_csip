@@ -10,7 +10,7 @@ import os
 import sys
 import requests
 import json
-import time
+import time 
 from time import gmtime, strftime
 import itertools
 from openpyxl import load_workbook
@@ -22,11 +22,11 @@ from aiohttp import ClientSession, TCPConnector, ClientTimeout
 ###### MODIFY THESE VALUES TO RUN RHEM BATCH SCRIPT
 ###### Note: If you are planning on doing large batch runs (greater than 2,0000) please let us know. 
 ######       You can email gerardo.armendariz@usda.gov  
-SCENARIO_COUNT = 6                    # the number of scenarios (rows) to run
+SCENARIO_COUNT = 1                    # the number of scenarios (rows) to run
 OUTPUT_DIR = "output"                 # the output directory where paramter and summary files will be saved
-WORKBOOK_Name = "Other_peoples_scripts/RHEM_template_with_RP_results_test.xlsx"  # the workbook used for inputs and results
+WORKBOOK_Name = "RHEM_template.xlsx"  # the workbook used for inputs and results
 ###################################################
-
+  
 try:
     RHEM_WORKBOOK = load_workbook(WORKBOOK_Name,data_only=True)
 except:

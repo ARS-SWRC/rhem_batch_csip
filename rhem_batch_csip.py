@@ -6,7 +6,6 @@
 ## 
 ##  Author: Gerardo Armendariz
 ##  
-
 import os
 import sys
 import requests
@@ -23,9 +22,9 @@ from aiohttp import ClientSession, TCPConnector, ClientTimeout
 ###### MODIFY THESE VALUES TO RUN RHEM BATCH SCRIPT
 ###### Note: If you are planning on doing large batch runs (greater than 2,0000) please let us know. 
 ######       You can email gerardo.armendariz@usda.gov  
-SCENARIO_COUNT = 1                    # the number of scenarios (rows) to run
+SCENARIO_COUNT = 6                    # the number of scenarios (rows) to run
 OUTPUT_DIR = "output"                 # the output directory where paramter and summary files will be saved
-WORKBOOK_Name = "RHEM_template.xlsx"  # the workbook used for inputs and results
+WORKBOOK_Name = "Other_peoples_scripts/RHEM_template_with_RP_results_test.xlsx"  # the workbook used for inputs and results
 ###################################################
 
 try:
@@ -167,7 +166,6 @@ def saveScenarioParameterFile(rhem_run_response):
     with open(os.path.join(OUTPUT_DIR,rhem_run_response["result"][16]["name"]), 'wb') as file:
         file.write(str(rhem_parameters_result.text).encode())
 
-
 ####
 # Saves the response summary files
 #
@@ -177,7 +175,6 @@ def saveScenarioSummaryResults(rhem_run_response):
     rhem_summary_result = requests.get(rhem_summary_result_url)
     with open(os.path.join(OUTPUT_DIR,rhem_run_response["result"][18]["name"]), 'wb') as file:
         file.write(str(rhem_summary_result.text).encode())
-
 
 ####
 # Saves the simulation output summary results to the Excel sheet
@@ -191,7 +188,7 @@ def saveScenarioSummaryResultsToExcel(rhem_run_response,row_index):
 
     with open(os.path.join(OUTPUT_DIR, rhem_run_response["result"][18]["name"]), 'rb') as file:
         index = 3
-        for line in itertools.islice(file, 2, 6):
+        for line in itertools.islice(file, 2, 28):
             if index == 3: # Avg. Precipitation
                 ws.cell(row=row_index + 1, column=20).value = str(line).split("=")[1].rstrip("'").strip(r'\n')
             elif index == 4: # Avg. Runoff
@@ -200,8 +197,63 @@ def saveScenarioSummaryResultsToExcel(rhem_run_response,row_index):
                 ws.cell(row=row_index + 1, column=22).value = str(line).split("=")[1].rstrip("'").strip(r'\n')
             elif index == 6: # Avg. Sediment Yield
                 ws.cell(row=row_index + 1, column=23).value = str(line).split("=")[1].rstrip("'").strip(r'\n')
+            elif index == 13: # Rain Yearly Totals
+                ws.cell(row=row_index + 1, column=25).value = str(line).split(")")[1].split()[0]
+                ws.cell(row=row_index + 1, column=26).value = str(line).split(")")[1].split()[1]
+                ws.cell(row=row_index + 1, column=27).value = str(line).split(")")[1].split()[2]
+                ws.cell(row=row_index + 1, column=28).value = str(line).split(")")[1].split()[3]
+                ws.cell(row=row_index + 1, column=29).value = str(line).split(")")[1].split()[4]
+                ws.cell(row=row_index + 1, column=30).value = str(line).split(")")[1].split()[5].rstrip("'").strip(r'\n')
+            elif index == 14: # Runoff Yearly Totals
+                ws.cell(row=row_index + 1, column=31).value = str(line).split(")")[1].split()[0]
+                ws.cell(row=row_index + 1, column=32).value = str(line).split(")")[1].split()[1]
+                ws.cell(row=row_index + 1, column=33).value = str(line).split(")")[1].split()[2]
+                ws.cell(row=row_index + 1, column=34).value = str(line).split(")")[1].split()[3]
+                ws.cell(row=row_index + 1, column=35).value = str(line).split(")")[1].split()[4]
+                ws.cell(row=row_index + 1, column=36).value = str(line).split(")")[1].split()[5].rstrip("'").strip(r'\n')
+            elif index == 15: # Soil Loss Yearly Totals
+                ws.cell(row=row_index + 1, column=37).value = str(line).split(")")[1].split()[0]
+                ws.cell(row=row_index + 1, column=38).value = str(line).split(")")[1].split()[1]
+                ws.cell(row=row_index + 1, column=39).value = str(line).split(")")[1].split()[2]
+                ws.cell(row=row_index + 1, column=40).value = str(line).split(")")[1].split()[3]
+                ws.cell(row=row_index + 1, column=41).value = str(line).split(")")[1].split()[4]
+                ws.cell(row=row_index + 1, column=42).value = str(line).split(")")[1].split()[5].rstrip("'").strip(r'\n')
+            elif index == 16: # Sediment Yield Yearly Totals
+                ws.cell(row=row_index + 1, column=43).value = str(line).split(")")[1].split()[0]
+                ws.cell(row=row_index + 1, column=44).value = str(line).split(")")[1].split()[1]
+                ws.cell(row=row_index + 1, column=45).value = str(line).split(")")[1].split()[2]
+                ws.cell(row=row_index + 1, column=46).value = str(line).split(")")[1].split()[3]
+                ws.cell(row=row_index + 1, column=47).value = str(line).split(")")[1].split()[4]
+                ws.cell(row=row_index + 1, column=48).value = str(line).split(")")[1].split()[5].rstrip("'").strip(r'\n')
+            elif index == 25: # Rain Maximum Daily
+                ws.cell(row=row_index + 1, column=49).value = str(line).split(")")[1].split()[0]
+                ws.cell(row=row_index + 1, column=50).value = str(line).split(")")[1].split()[1]
+                ws.cell(row=row_index + 1, column=51).value = str(line).split(")")[1].split()[2]
+                ws.cell(row=row_index + 1, column=52).value = str(line).split(")")[1].split()[3]
+                ws.cell(row=row_index + 1, column=53).value = str(line).split(")")[1].split()[4]
+                ws.cell(row=row_index + 1, column=54).value = str(line).split(")")[1].split()[5].rstrip("'").strip(r'\n')
+            elif index == 26: # Runoff Maximum Daily
+                ws.cell(row=row_index + 1, column=55).value = str(line).split(")")[1].split()[0]
+                ws.cell(row=row_index + 1, column=56).value = str(line).split(")")[1].split()[1]
+                ws.cell(row=row_index + 1, column=57).value = str(line).split(")")[1].split()[2]
+                ws.cell(row=row_index + 1, column=58).value = str(line).split(")")[1].split()[3]
+                ws.cell(row=row_index + 1, column=59).value = str(line).split(")")[1].split()[4]
+                ws.cell(row=row_index + 1, column=60).value = str(line).split(")")[1].split()[5].rstrip("'").strip(r'\n')
+            elif index == 27: # Soil Loss Maximum Daily
+                ws.cell(row=row_index + 1, column=61).value = str(line).split(")")[1].split()[0]
+                ws.cell(row=row_index + 1, column=62).value = str(line).split(")")[1].split()[1]
+                ws.cell(row=row_index + 1, column=63).value = str(line).split(")")[1].split()[2]
+                ws.cell(row=row_index + 1, column=64).value = str(line).split(")")[1].split()[3]
+                ws.cell(row=row_index + 1, column=65).value = str(line).split(")")[1].split()[4]
+                ws.cell(row=row_index + 1, column=66).value = str(line).split(")")[1].split()[5].rstrip("'").strip(r'\n')
+            elif index == 28: # Sediment Yield Maximum Daily
+                ws.cell(row=row_index + 1, column=67).value = str(line).split(")")[1].split()[0]
+                ws.cell(row=row_index + 1, column=68).value = str(line).split(")")[1].split()[1]
+                ws.cell(row=row_index + 1, column=69).value = str(line).split(")")[1].split()[2]
+                ws.cell(row=row_index + 1, column=70).value = str(line).split(")")[1].split()[3]
+                ws.cell(row=row_index + 1, column=71).value = str(line).split(")")[1].split()[4]
+                ws.cell(row=row_index + 1, column=72).value = str(line).split(")")[1].split()[5].rstrip("'").strip(r'\n')
             index = index + 1
-    
     RHEM_WORKBOOK.save(WORKBOOK_Name)
 
 #####

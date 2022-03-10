@@ -18,7 +18,7 @@ In order to run the RHEM Batch Script, you will need:
 
 # Installation and running script
 
-**NOTE:** If you are planning on doing large batch runs (greater than 2,0000) please let us know.  You can email gerardo.armendariz@usda.gov 
+**NOTE:** If you are planning on doing large batch runs (greater than 2,000) please let us know.  You can email gerardo.armendariz@usda.gov 
 
  1) Install Python 3 in your system
 

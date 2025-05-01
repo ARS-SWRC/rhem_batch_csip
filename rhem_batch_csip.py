@@ -22,7 +22,7 @@ from aiohttp import ClientSession, TCPConnector, ClientTimeout
 ###### MODIFY THESE VALUES TO RUN RHEM BATCH SCRIPT
 ###### Note: If you are planning on doing large batch runs (greater than 2,0000) please let us know. 
 ######       You can email gerardo.armendariz@usda.gov  
-SCENARIO_COUNT = 1                    # the number of scenarios (rows) to run
+SCENARIO_COUNT = 2                    # the number of scenarios (rows) to run
 OUTPUT_DIR = "output"                 # the output directory where paramter and summary files will be saved
 WORKBOOK_Name = "RHEM_template.xlsx"  # the workbook used for inputs and results
 ###################################################
@@ -31,8 +31,6 @@ try:
     RHEM_WORKBOOK = load_workbook(WORKBOOK_Name,data_only=True)
 except:
     print("The Excel template file was not found.")
-
-CSIP_RHEM_URL = 'http://csip.engr.colostate.edu:8083/csip-rhem/m/rhem/runrhem/1.0'
 
 #####
 #  Main function
@@ -108,18 +106,24 @@ async def openAndRunRHEMScenarios():
                     SAR = row[6].value
                     if SAR is None:   
                         SAR = 0
+                    
+                    if row[3].value == "CLIGRID":
+                        CSIP_RHEM_URL = 'http://csip.engr.colostate.edu:8083/csip-rhem/m/rhem/runrhem/2.0'
+                        CLIGRID_run = True
+                    else:
+                        CSIP_RHEM_URL = 'http://csip.engr.colostate.edu:8083/csip-rhem/m/rhem/runrhem/1.0'
+                        CLIGRID_run = False
 
                     # crete the input file/request to run the curren scenario
-                    request_data = createInputFile(row_index, row_index,  scenario_name, row[1].value, row[2].value, row[3].value, row[4].value, row[5].value, SAR, 25, row[7].value, row[8].value, row[9].value, row[10].value, row[11].value, row[12].value, row[13].value, row[14].value, row[15].value,row[16].value, row[17].value)
+                    request_data = createInputFile(CLIGRID_run, row_index, row_index,  scenario_name, row[1].value, row[2].value, row[3].value, row[4].value, row[5].value, SAR, 25, row[7].value, row[8].value, row[9].value, row[10].value, row[11].value, row[12].value, row[13].value, row[14].value, row[15].value,row[16].value, row[17].value)
                     
-                    task = asyncio.ensure_future(runRHEMCSIPServiceAsync(CSIP_RHEM_URL, request_data, session, row_index, scenario_name))
+                    task = asyncio.ensure_future(runRHEMCSIPServiceAsync(CLIGRID_run, CSIP_RHEM_URL, request_data, session, row_index, scenario_name))
                     tasks.append(task)
 
                 row_index = row_index + 1   
 
          # all the RHEM scenario run response bodies in this variable
         responses = await asyncio.gather(*tasks)
-        #print(responses)
 
         # end timer
         t1 = time.time()
@@ -134,7 +138,7 @@ async def openAndRunRHEMScenarios():
 # Fetch a new RHEM run using the given payload(requestBody).  Use the row_index to identify the scneario (from the Excel spreadsheet)
 # being processed.
 #
-async def runRHEMCSIPServiceAsync(url, requestBody, session, row_index, scenario_name):
+async def runRHEMCSIPServiceAsync(CLIGRID_run, url, requestBody, session, row_index, scenario_name):
     ws = RHEM_WORKBOOK.active
     
     async with session.post(url, json=json.loads(requestBody)) as response:
@@ -150,9 +154,9 @@ async def runRHEMCSIPServiceAsync(url, requestBody, session, row_index, scenario
             print(error_message)
             ws.cell(row=row_index + 1, column=25).value = error_message
         else:
-            saveScenarioParameterFile(rhem_run_response)
-            saveScenarioSummaryResults(rhem_run_response)
-            saveScenarioSummaryResultsToExcel(rhem_run_response, row_index)
+            saveScenarioParameterFile(CLIGRID_run, rhem_run_response)
+            saveScenarioSummaryResults(CLIGRID_run, rhem_run_response)
+            saveScenarioSummaryResultsToExcel(CLIGRID_run, rhem_run_response, row_index)
 
         RHEM_WORKBOOK.save(WORKBOOK_Name)
         return rhem_run_response
@@ -160,33 +164,51 @@ async def runRHEMCSIPServiceAsync(url, requestBody, session, row_index, scenario
 ####
 # Saves the input parameter file
 #
-def saveScenarioParameterFile(rhem_run_response):
-    rhem_parameters_result_url = rhem_run_response["result"][16]["value"]
+def saveScenarioParameterFile(CLIGRID_run, rhem_run_response):
+    if CLIGRID_run == True:
+        result_item_index = 24
+    else:
+        result_item_index = 16
+
+    rhem_parameters_result_url = rhem_run_response["result"][result_item_index]["value"]
     rhem_parameters_result = requests.get(rhem_parameters_result_url)
-    with open(os.path.join(OUTPUT_DIR,rhem_run_response["result"][16]["name"]), 'wb') as file:
+    with open(os.path.join(OUTPUT_DIR,rhem_run_response["result"][result_item_index]["name"]), 'wb') as file:
         file.write(str(rhem_parameters_result.text).encode())
 
 ####
 # Saves the response summary files
 #
-def saveScenarioSummaryResults(rhem_run_response):
+def saveScenarioSummaryResults(CLIGRID_run, rhem_run_response):
+
+    if CLIGRID_run == True:
+        result_item_index = 26
+    else:
+        result_item_index = 18
+
     # summary file
-    rhem_summary_result_url = rhem_run_response["result"][18]["value"]
+    rhem_summary_result_url = rhem_run_response["result"][result_item_index]["value"]
     rhem_summary_result = requests.get(rhem_summary_result_url)
-    with open(os.path.join(OUTPUT_DIR,rhem_run_response["result"][18]["name"]), 'wb') as file:
+    with open(os.path.join(OUTPUT_DIR,rhem_run_response["result"][result_item_index]["name"]), 'wb') as file:
         file.write(str(rhem_summary_result.text).encode())
 
 ####
 # Saves the simulation output summary results to the Excel sheet
 #
-def saveScenarioSummaryResultsToExcel(rhem_run_response,row_index):
+def saveScenarioSummaryResultsToExcel(CLIGRID_run, rhem_run_response,row_index):
     ws = RHEM_WORKBOOK.active
 
+    if CLIGRID_run == True:
+        result_item_index = 26
+        result_item_index_tds = 15
+    else:
+        result_item_index = 18
+        result_item_index_tds = 15
+
     # save the TDS (total dissolved solids) value
-    tds = rhem_run_response["result"][15]["value"]
+    tds = rhem_run_response["result"][result_item_index_tds]["value"]
     ws.cell(row=row_index + 1, column=24).value = str(tds)
 
-    with open(os.path.join(OUTPUT_DIR, rhem_run_response["result"][18]["name"]), 'rb') as file:
+    with open(os.path.join(OUTPUT_DIR, rhem_run_response["result"][result_item_index]["name"]), 'rb') as file:
         index = 3
         for line in itertools.islice(file, 2, 28):
             if index == 3: # Avg. Precipitation
@@ -259,46 +281,85 @@ def saveScenarioSummaryResultsToExcel(rhem_run_response,row_index):
 #####
 #  Creates the input request for the CSIP RHEM service
 #
-def createInputFile(AoAID, rhem_site_id, scenarioname, scenariodescription, units, stateid, climatestationid, soiltexture, sar, soilmoisture, slopelength, slopeshape, slopesteepness, bunchgrasscanopycover, forbscanopycover, shrubscanopycover, sodgrasscanopycover, basalcover, rockcover, littercover, cryptogamscover):
-    request_data = '''{
-        "metainfo": {},
-        "parameter": [
-            {
-                "name": "AoAID",
-                "description": "Area of Analysis Identifier",
-                "value": ''' + str(AoAID)  + '''
-            },
-            {
-                "name": "rhem_site_id",
-                "description": "RHEM Evaluation Site Identifier",
-                "value": ''' + str(rhem_site_id) + '''
-            },
-            {
-                "name": "scenarioname",
-                "description": "RHEM Scenario Name",
-                "value": "''' + str(scenarioname) + '''"
-            },
-            {
-                "name": "scenariodescription",
-                "description": "RHEM Scenario description",
-                "value": "''' + str(scenariodescription) + '''"
-            },
-            {
-                "name": "units",
-                "description": "RHEM Scenario Unit of Measure, 1 = metric and 2 = English",
-                "value": ''' + str(units) + '''
-            },
-            {
-                "name": "stateid",
-                "description": " State Abbreviation",
-                "value": "''' + str(stateid) + '''"
-            },
-            {
-                "name": "climatestationid",
-                "description": "Climate Station Identification Number",
-                "value": "''' + str(climatestationid) + '''"
-            },
-            {
+def createInputFile(CLIGRID_run, AoAID, rhem_site_id, scenarioname, scenariodescription, units, stateid, climatestationid, soiltexture, sar, soilmoisture, slopelength, slopeshape, slopesteepness, bunchgrasscanopycover, forbscanopycover, shrubscanopycover, sodgrasscanopycover, basalcover, rockcover, littercover, cryptogamscover):
+    if CLIGRID_run:  
+        request_data_part1 = '''{
+            "metainfo": {},
+            "parameter": [
+                {
+                    "name": "AoAID",
+                    "description": "Area of Analysis Identifier",
+                    "value": ''' + str(AoAID)  + '''
+                },
+                {
+                    "name": "rhem_site_id",
+                    "description": "RHEM Evaluation Site Identifier",
+                    "value": ''' + str(rhem_site_id) + '''
+                },
+                {
+                    "name": "rhem_site_loc",
+                    "description": "RHEM Site Location (Point), [lat,lon]",
+                    "value": [
+                        ''' + str(climatestationid.split(",")[0]) + ''',
+                        ''' + str(climatestationid.split(",")[1]) + '''
+                    ]
+                },
+                {
+                    "name": "scenarioname",
+                    "description": "RHEM Scenario Name",
+                    "value": "''' + str(scenarioname) + '''"
+                },
+                {
+                    "name": "scenariodescription",
+                    "description": "RHEM Scenario description",
+                    "value": "''' + str(scenariodescription) + '''"
+                },
+                {
+                    "name": "units",
+                    "description": "RHEM Scenario Unit of Measure, 1 = metric and 2 = English",
+                    "value": ''' + str(units) + '''
+                },'''
+    else:
+        request_data_part1 = '''{
+            "metainfo": {},
+            "parameter": [
+                {
+                    "name": "AoAID",
+                    "description": "Area of Analysis Identifier",
+                    "value": ''' + str(AoAID)  + '''
+                },
+                {
+                    "name": "rhem_site_id",
+                    "description": "RHEM Evaluation Site Identifier",
+                    "value": ''' + str(rhem_site_id) + '''
+                },
+                {
+                    "name": "scenarioname",
+                    "description": "RHEM Scenario Name",
+                    "value": "''' + str(scenarioname) + '''"
+                },
+                {
+                    "name": "scenariodescription",
+                    "description": "RHEM Scenario description",
+                    "value": "''' + str(scenariodescription) + '''"
+                },
+                {
+                    "name": "units",
+                    "description": "RHEM Scenario Unit of Measure, 1 = metric and 2 = English",
+                    "value": ''' + str(units) + '''
+                },
+                {
+                    "name": "stateid",
+                    "description": " State Abbreviation",
+                    "value": "''' + str(stateid) + '''"
+                },
+                {
+                    "name": "climatestationid",
+                    "description": "Climate Station Identification Number",
+                    "value": "''' + str(climatestationid) + '''"
+                },'''
+
+    request_data_part2 = '''{
                 "name": "soiltexture",
                 "description": "Surface Soil Texture Class Label",
                 "value": "''' + str(soiltexture) + '''"
@@ -312,7 +373,9 @@ def createInputFile(AoAID, rhem_site_id, scenarioname, scenariodescription, unit
                 "name": "slopelength",
                 "description": "Slope Length",
                 "value": ''' + str(slopelength) + ''',
-                "unit": "m"
+                "unit": "m",
+                "min": 0.01,
+                "max": "394 feet/120 meters"
             },
             {
                 "name": "slopeshape",
@@ -322,7 +385,7 @@ def createInputFile(AoAID, rhem_site_id, scenarioname, scenariodescription, unit
             {
                 "name": "slopesteepness",
                 "description": "Slope Steepness",
-                "value": ''' + str(slopesteepness) + ''',
+                "value": "''' + str(slopesteepness) + '''",
                 "unit": "%",
                 "min": 0.01,
                 "max": 100
@@ -330,7 +393,7 @@ def createInputFile(AoAID, rhem_site_id, scenarioname, scenariodescription, unit
             {
                 "name": "bunchgrasscanopycover",
                 "description": "Bunchgrass Foliar Cover Percent",
-                "value": ''' + str(bunchgrasscanopycover) + ''',
+                "value": "''' + str(bunchgrasscanopycover) + '''",
                 "unit": "%",
                 "min": 0.01,
                 "max": 100
@@ -338,7 +401,7 @@ def createInputFile(AoAID, rhem_site_id, scenarioname, scenariodescription, unit
             {
                 "name": "forbscanopycover",
                 "description": "Forbs and Annuals Foliar Cover Percent",
-                "value": ''' + str(forbscanopycover) + ''',
+                "value": "''' + str(forbscanopycover) + '''",
                 "unit": "%",
                 "min": 0.01,
                 "max": 100
@@ -346,7 +409,7 @@ def createInputFile(AoAID, rhem_site_id, scenarioname, scenariodescription, unit
             {
                 "name": "shrubscanopycover",
                 "description": "Shrub Foliar Cover Percent",
-                "value": ''' + str(shrubscanopycover) + ''',
+                "value": "''' + str(shrubscanopycover) + '''",
                 "unit": "%",
                 "min": 0.01,
                 "max": 100
@@ -354,7 +417,7 @@ def createInputFile(AoAID, rhem_site_id, scenarioname, scenariodescription, unit
             {
                 "name": "sodgrasscanopycover",
                 "description": "Sodgrass Foliar Cover Percent",
-                "value": ''' + str(sodgrasscanopycover) + ''',
+                "value": "''' + str(sodgrasscanopycover) + '''",
                 "unit": "%",
                 "min": 0.01,
                 "max": 100
@@ -362,7 +425,7 @@ def createInputFile(AoAID, rhem_site_id, scenarioname, scenariodescription, unit
             {
                 "name": "basalcover",
                 "description": "Plant Basal Cover Percent",
-                "value": ''' + str(basalcover) + ''',
+                "value": "''' + str(basalcover) + '''",
                 "unit": "%",
                 "min": 0.01,
                 "max": 100
@@ -370,7 +433,7 @@ def createInputFile(AoAID, rhem_site_id, scenarioname, scenariodescription, unit
             {
                 "name": "rockcover",
                 "description": "Rock Cover Percent",
-                "value": ''' + str(rockcover) + ''',
+                "value": "''' + str(rockcover) + '''",
                 "unit": "%",
                 "min": 0.01,
                 "max": 100
@@ -378,7 +441,7 @@ def createInputFile(AoAID, rhem_site_id, scenarioname, scenariodescription, unit
             {
                 "name": "littercover",
                 "description": "Litter Cover Percent",
-                "value": ''' + str(littercover) + ''',
+                "value": "''' + str(littercover) + '''",
                 "unit": "%",
                 "min": 0.01,
                 "max": 100
@@ -386,7 +449,7 @@ def createInputFile(AoAID, rhem_site_id, scenarioname, scenariodescription, unit
             {
                 "name": "cryptogamscover",
                 "Description": "Cryptogam Cover Percent",
-                "value": ''' + str(cryptogamscover) + ''',
+                "value": "''' + str(cryptogamscover) + '''",
                 "unit": "%",
                 "min": 0.01,
                 "max": 100
@@ -394,14 +457,17 @@ def createInputFile(AoAID, rhem_site_id, scenarioname, scenariodescription, unit
             {
             "name": "sar",
             "Description": "Sodium Adsorption Ratio",
-            "value": ''' + str(sar) + ''',
+            "value": "''' + str(sar) + '''",
             "unit": "%",
             "min": 0,
             "max": 50
             }
         ]
     }'''
-    return request_data
+
+    #print(request_data_part1 + request_data_part2)
+
+    return request_data_part1 + request_data_part2
 
 ####
 # The main function

@@ -357,6 +357,10 @@ def createInputFile(CLIGRID_run, AoAID, rhem_site_id, scenarioname, scenariodesc
                     "name": "climatestationid",
                     "description": "Climate Station Identification Number",
                     "value": "''' + str(climatestationid) + '''"
+                },
+                {
+                    "name": "cliyear",
+                    "value": 2015
                 },'''
 
     request_data_part2 = '''{
